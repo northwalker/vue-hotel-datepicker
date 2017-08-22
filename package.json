@@ -1,0 +1,49 @@
+{
+  "name": "vue-hotel-datepicker",
+  "version": "0.0.1",
+  "description": "A Vue.js date range picker",
+  "author": "Northwalker <northwalker28@gmail.com>",
+  "license": "MIT",
+  "main": "dist/vue-hotel-datepicker.min.js",
+  "scripts": {
+    "dev": "",
+    "watch": "",
+    "build": "",
+    "lint": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northwalker/vue-hotel-datepicker.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "datepicker",
+    "date picker",
+    "date range picker",
+    "hotel datepicker",
+    "vue datepicker"
+  ],
+  "bugs": {
+    "url": "https://github.com/northwalker/vue-hotel-datepicker/issues"
+  },
+  "homepage": "https://github.com/northwalker/vue-hotel-datepicker#readme",
+  "dependencies": {
+    "fecha": "^2.3.1",
+    "vue": "^2.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.5.0",
+    "eslint-loader": "^1.9.0",
+    "vue-loader": "^13.0.4",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}

@@ -16,11 +16,11 @@ module.exports = {
     hints: false
   },
   entry: {
-    app:  path.join(__dirname, '../src/index.js')
+    app: path.join(__dirname, '../src/index.js')
   },
   output: {
     path: isProduction ? path.join(__dirname, '../docs') : path.join(__dirname, '../docs'),
-    publicPath: '/',
+    publicPath: isProduction ? '/' : '/vue-hotel-datepicker/',
     filename: isProduction
       ? 'js/[name].[chunkhash:7].js'
       : '[name].js'

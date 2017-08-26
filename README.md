@@ -3,6 +3,11 @@ A Vue.js responsive date range picker for hotels or date range selection, that d
 
 ## Demo
 
+ - Demo page 
+   [Github Page](https://northwalker.github.io/vue-hotel-datepicker/)
+
+ - Running at development
+
 ```git clone https://github.com/northwalker/vue-hotel-datepicker.git```
 
 ```npm install``` or ```yarn install```
@@ -11,8 +16,15 @@ A Vue.js responsive date range picker for hotels or date range selection, that d
 
 
 ## Installation / Usage
+
+#### HTML
+```html
+<script type="text/javascript" src="./<your-component-folder-path>/vue-hotel-datepicker.min.js"></script>
+```
+
+#### Javascript
 ```javascript
-import HotelDatePicker from './<your-component-folder-path>/vue-hotel-datepicker'
+import HotelDatePicker from './<your-component-folder-path>/vue-hotel-datepicker.min.js'
 
 export default {
   components: {
@@ -31,7 +43,7 @@ export default {
 ### placeholder
 
 - Type: `String`
-- Default: `Check-in ► Check-out`
+- Default: `Check-in ~ Check-out`
 
 The input placeholder text
 
@@ -52,7 +64,7 @@ The date format string in the info box. If not set, it uses the `format` option.
 ### separator
 
 - Type: `String`
-- Default: ` - `
+- Default: ` - ` 
 
 The separator string used between date strings.
 

@@ -6,10 +6,12 @@
   "license": "MIT",
   "main": "dist/vue-hotel-datepicker.min.js",
   "scripts": {
-    "watch": "",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot --config ./build/webpack.dev.conf.js",
     "prebuild": "rm -rf dist",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
+    "predocs": "rm -rf docs",
+    "docs": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot --config ./build/webpack.config.js",
     "lint": "eslint ./src/*.vue ./src/*.js "
   },
   "repository": {
@@ -43,6 +45,7 @@
     "eslint": "^4.5.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",

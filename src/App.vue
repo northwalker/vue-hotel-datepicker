@@ -12,9 +12,10 @@
       <section class="content" id="demo">
         <div class="demoContainer">
           <div>
-            <h3>Demo</h3>
+            <h2>Demo</h2>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 1: Default simple range datepicker with an predafined input</p>
             <HotelDatePicker
             :ref="dpkr1.datePickerId"
             :active="dpkr1.active"
@@ -22,26 +23,27 @@
             :placeholder="dpkr1.placeholder"
             :selectForward="dpkr1.selectForward"
             :separator="dpkr1.separator"
+            :showTopbar="dpkr1.showTopbar"
             :hoveringTooltip="dpkr1.hoveringTooltip"
             v-on:updateDateRange="dpkr1.updateDateRange"
             v-on:cancelUpdateDateRange="dpkr1.cancelUpdateDateRange" />
-            <p>Default simple range datepicker with an predafined input</p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 2: Default hotel style range datepicker with a predefined value in the input </p>
             <HotelDatePicker
             :ref="dpkr2.datePickerId"
             :datePickerId="dpkr2.datePickerId"
             :placeholder="dpkr2.placeholder" />
-            <p>Default hotel style range datepicker with a predefined value in the input </p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 3: Default hotel style range datepicker setting with an empty input</p>
             <HotelDatePicker
             :ref="dpkr3.datePickerId"
             :datePickerId="dpkr3.datePickerId"
             :placeholder="dpkr3.placeholder" />
-            <p>Default hotel style range datepicker setting with an empty input</p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 4: Custom format: <span class="parameter">{{dpkr4.format}}</span></p>
             <HotelDatePicker
               :ref="dpkr4.datePickerId"
               :datePickerId="dpkr4.datePickerId"
@@ -49,9 +51,9 @@
               :autoClose="autoClose"
               :separator="separator"
               :format="dpkr4.format" />
-            <p>Custom format: <span class="parameter">{{dpkr4.format}}</span></p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 5: Start of week: <span class="parameter">{{dpkr5.startOfWeek}}</span></p>
             <HotelDatePicker
               :ref="dpkr5.datePickerId"
               :datePickerId="dpkr5.datePickerId"
@@ -59,9 +61,9 @@
               :autoClose="autoClose"
               :separator="separator"
               :startOfWeek="dpkr5.startOfWeek" />
-            <p>Start of week: <span class="parameter">{{dpkr5.startOfWeek}}</span></p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 6: Mininum number of nights: <span class="parameter">7</span> </p>
             <HotelDatePicker
               :ref="dpkr6.datePickerId"
               :datePickerId="dpkr6.datePickerId"
@@ -69,9 +71,9 @@
               :autoClose="autoClose"
               :separator="separator"
               :minNights="dpkr6.minNights"  />
-            <p>Mininum number of nights: <span class="parameter">7</span> </p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 7: Maximum number of nights: <span class="parameter">5</span></p>
             <HotelDatePicker
               :ref="dpkr7.datePickerId"
               :datePickerId="dpkr7.datePickerId"
@@ -79,9 +81,9 @@
               :autoClose="autoClose"
               :separator="separator"
               :maxNights="dpkr7.maxNights" />
-            <p>Maximum number of nights: <span class="parameter">5</span></p>
           </div>
           <div class="demoDatepicker">
+            <p> Demo 8:Range between <span class="parameter">4</span> and <span class="parameter">8</span> nights</p>
             <HotelDatePicker
               :ref="dpkr8.datePickerId"
               :datePickerId="dpkr8.datePickerId"
@@ -90,9 +92,11 @@
               :separator="separator"
               :minNights="dpkr8.minNights"
               :maxNights="dpkr8.maxNights" />
-            <p>Range between <span class="parameter">4</span> and <span class="parameter">8</span> nights</p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 9: Don't allow ranges before custom date:
+              <span class="parameter"> {{dpkr9.startDate}} </span>
+            </p>
             <HotelDatePicker
               :ref="dpkr9.datePickerId"
               :datePickerId="dpkr9.datePickerId"
@@ -100,11 +104,11 @@
               :startDate="dpkr9.startDate"
               :autoClose="autoClose"
               :separator="separator" />
-            <p>Don't allow ranges before custom date:
-              <span class="parameter"> {{dpkr9.startDate}} </span>
-            </p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 10: Don't allow ranges after custom date:
+              <span class="parameter"> {{dpkr10.endDate}} </span>
+            </p>
             <HotelDatePicker
               :ref="dpkr10.datePickerId"
               :datePickerId="dpkr10.datePickerId"
@@ -112,11 +116,9 @@
               :endDate="dpkr10.endDate"
               :autoClose="autoClose"
               :separator="separator" />
-            <p>Don't allow ranges after custom date:
-              <span class="parameter"> {{dpkr10.endDate}} </span>
-            </p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 11: Don't allow selections in both directions (first click = first date, second click = second date)</p>
             <HotelDatePicker
               :ref="dpkr11.datePickerId"
               :datePickerId="dpkr11.datePickerId"
@@ -124,9 +126,14 @@
               :selectForward="dpkr11.selectForward"
               :autoClose="autoClose"
               :separator="separator" />
-            <p>Don't allow selections in both directions (first click = first date, second click = second date)</p>
           </div>
           <div class="demoDatepicker">
+            <p>
+              Deom 12: Disable some dates:
+              <span class="parameter">
+                {{dpkr12.disabledDates}}
+              </span>
+            </p>
             <HotelDatePicker
               :ref="dpkr12.datePickerId"
               :datePickerId="dpkr12.datePickerId"
@@ -134,14 +141,9 @@
               :autoClose="autoClose"
               :separator="separator"
               :disabledDates="dpkr12.disabledDates" />
-            <p>
-              Disable some dates:
-              <span class="parameter">
-                {{dpkr12.disabledDates}}
-              </span>
-            </p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo :13 Disable some dates but allow the checkout in those dates. </p>
             <HotelDatePicker
               :ref="dpkr13.datePickerId"
               :datePickerId="dpkr13.datePickerId"
@@ -150,17 +152,17 @@
               :separator="separator"
               :disabledDates="dpkr13.disabledDates"
               :enableCheckout="dpkr13.enableCheckout" />
-            <p>Disable some dates but allow the checkout in those dates. </p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 14: Don't close the datepicker after selection</p>
             <HotelDatePicker
               :ref="dpkr14.datePickerId"
               :datePickerId="dpkr14.datePickerId"
               :placeholder="dpkr14.placeholder"
               :autoClose="dpkr14.autoClose" />
-             <p>Don't close the datepicker after selection</p>
           </div>
           <div class="demoDatepicker">
+            <p>Demo 15: Use datepicker in another language (繁體中文)</p>
             <HotelDatePicker
               :ref="dpkr15.datePickerId"
               :datePickerId="dpkr15.datePickerId"
@@ -168,9 +170,7 @@
               :autoClose="autoClose"
               :separator="separator"
               :i18n="dpkr15.i18n" />
-            <p>Use datepicker in another language (繁體中文)</p>
           </div>
-
         </div>
       </section>
       <section class="footer">
@@ -242,18 +242,19 @@ export default {
         placeholder: 'DatePicker example 01',
         selectForward: false,
         separator: ' ~ ',
+        showTopbar: false,
         hoveringTooltip() {
           // Overwrite default boolean
           // Not working when value is false (boolean)
           return false;
         },
         updateDateRange(date) {
-          console.log('dpkr1 on updateDateRange', date);
+          // console.log('dpkr1 on updateDateRange', date);
           // You can $emit event to praent
           // EX: this.$emit('updateDateRange');
         },
         cancelUpdateDateRange() {
-          console.log('dpkr1 on cancelUpdateDateRange');
+          // console.log('dpkr1 on cancelUpdateDateRange');
           // You can $emit event to praent
           // EX: this.$emit('cancelUpdateDateRange');
         },
@@ -382,7 +383,7 @@ export default {
     },
     getDatePicker(datePickerId) {
       const hdpkr = this.$refs[this.datePickerId].getDatePicker();
-      console.log(hdpkr);
+      // console.log(hdpkr);
     },
     setRange(datePickerId, d1, d2) {
       this.$refs[datePickerId].setRange(d1, d2);
@@ -438,7 +439,8 @@ body {
       width: 728px;
     }
     @media (min-width: 1024px) {
-      width: 728px; // width: 960px;
+      // width: 728px;
+      width: 960px;
     }
     .banner {
       // * {
@@ -450,9 +452,11 @@ body {
       border-bottom: 1px solid #D3D3D3;
 
       h1 {
+        font-size: 32px;
         color: #484c55;
       }
       h3 {
+        font-size: 20px;
         color: #484c55;
       }
     }

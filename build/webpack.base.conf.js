@@ -1,5 +1,4 @@
 const path = require('path')
-const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   entry: {
@@ -18,10 +17,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
+        test: /\.(js)$/, // test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: path.join(__dirname, './src/'),
         exclude: /node_modules/,
         options: {
           formatter: require('eslint-friendly-formatter')
@@ -31,46 +29,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          // cssModules: {
-          //   // Add <style module> in *.vue file
-          //   localIdentName: '[name]-[local]-[hash:base64:5]',
-          //   camelCase: true
-          // },
-          // postcss: [autoprefixer({
-          //   browsers: [
-          //     '> 1%',
-          //     'last 2 versions',
-          //     'not ie <= 8'
-          //   ]
-          // })],
           loaders: {
-            // ////////////////////////////////////////////////////////////////////////////////////
-            // css: ExtractTextPlugin.extract({
-            //   use: 'css-loader',
-            //   fallback: 'vue-style-loader'
-            //   // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
-            // }),
-            // scss: ExtractTextPlugin.extract({
-            //   use: [
-            //     {
-            //       loader: 'css-loader',
-            //       options: {
-            //         minimize: isProduction,
-            //         sourceMap: isProduction
-            //       }
-            //     },
-            //     'sass-loader'
-            //   ],
-            //   fallback: 'vue-style-loader'
-            // })
-            // ////////////////////////////////////////////////////////////////////////////////////
-            // simple example with ExtractTextPlugin.
-            // scss: ExtractTextPlugin.extract({
-            //   use: 'css-loader!sass-loader',
-            //   fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
-            // })
-            // ////////////////////////////////////////////////////////////////////////////////////
-            // original example
             css: 'vue-style-loader!css-loader',
             scss: 'vue-style-loader!css-loader!sass-loader',
             // sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
@@ -82,8 +41,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: path.join(__dirname, '../node_modules/')
-        // include: path.join(__dirname, '../src/'),
+        exclude: path.resolve(__dirname, '../node_modules/')
       }
     ]
   },

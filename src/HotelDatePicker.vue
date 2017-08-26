@@ -39,7 +39,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Check-in ► Check-out'
+      default: 'Check-in ~ Check-out'
     },
     format: {
       type: String,
@@ -51,7 +51,7 @@ export default {
     },
     separator: {
       type: String,
-      default: '  ► '
+      default: ' - '
     },
     startOfWeek: {
       type: String,
@@ -92,15 +92,15 @@ export default {
     },
     animationSpeed: {
       type: String,
-      default: '.4s'
+      default: '.5s'
     },
     hoveringTooltip: {
       type: [Boolean, Function],
-      default: false
+      default: true
     },
     showTopbar: {
       type: Boolean,
-      default: false
+      default: true
     },
     autoClose: {
       type: Boolean,

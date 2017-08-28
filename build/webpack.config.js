@@ -20,9 +20,9 @@ module.exports = {
   },
   output: {
     path: isProduction ? path.join(__dirname, '../docs') : path.join(__dirname, '../docs'),
-    publicPath: '/',
+    publicPath: '',
     filename: isProduction
-      ? 'vue-hotel-datepicker/js/[name].[chunkhash:7].js'
+      ? 'js/[name].[chunkhash:7].js'
       : '[name].js'
   },
   module: {
@@ -106,7 +106,7 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: isProduction
-        ? 'vue-hotel-datepicker/css/[name].[contenthash:7].css'
+        ? 'css/[name].[contenthash:7].css'
         : '[name].css'
     }),
     new HtmlWebpackPlugin({

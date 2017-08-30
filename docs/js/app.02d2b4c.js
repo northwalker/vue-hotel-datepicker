@@ -10777,77 +10777,6 @@ var Component = normalizeComponent(
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -12804,7 +12733,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "demoDatepicker"
-  }, [_c('p', [_vm._v("Demo 4: Custom format: "), _c('span', {
+  }, [_c('p', [_vm._v("Demo 4: Custom format:\n            "), _c('span', {
     staticClass: "parameter"
   }, [_vm._v(_vm._s(_vm.dpkr4.format))])]), _vm._v(" "), _c('HotelDatePicker', {
     ref: _vm.dpkr4.datePickerId,
@@ -12817,7 +12746,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "demoDatepicker"
-  }, [_c('p', [_vm._v("Demo 5: Start of week: "), _c('span', {
+  }, [_c('p', [_vm._v("Demo 5: Start of week:\n            "), _c('span', {
     staticClass: "parameter"
   }, [_vm._v(_vm._s(_vm.dpkr5.startOfWeek))])]), _vm._v(" "), _c('HotelDatePicker', {
     ref: _vm.dpkr5.datePickerId,
@@ -12951,21 +12880,46 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('section', {
     staticClass: "banner"
-  }, [_c('div', [_c('h1', [_vm._v("Vue Hotel Datepicker")])]), _vm._v(" "), _c('div', [_c('h3', [_vm._v("A vue.js date range picker for hotel and more. ")])])])
+  }, [_c('div', {
+    staticClass: "title"
+  }, [_c('h1', [_vm._v("Vue Hotel Datepicker")])]), _vm._v(" "), _c('div', {
+    staticClass: "subTitle"
+  }, [_c('h3', [_vm._v("A vue.js date range picker for hotel and more. ")])]), _vm._v(" "), _c('div', {
+    staticClass: "links"
+  }, [_c('div', [_c('a', {
+    staticClass: "linkDownload",
+    attrs: {
+      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/master.zip"
+    }
+  }, [_vm._v("Download ZIP")])]), _vm._v(" "), _c('div', {
+    staticClass: "linkTextWrapper"
+  }, [_c('a', {
+    staticClass: "linkText",
+    attrs: {
+      "target": "_blank",
+      "href": "https://github.com/northwalker/vue-hotel-datepicker"
+    }
+  }, [_vm._v("View on Github")]), _vm._v(" "), _c('a', {
+    staticClass: "linkText",
+    attrs: {
+      "target": "_blank",
+      "href": "https://github.com/northwalker/vue-hotel-datepicker/issues"
+    }
+  }, [_vm._v("Report issue")])])])])
 },function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('h2', [_vm._v("Demo")])])
 },function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_vm._v("Demo 6: Mininum number of nights: "), _c('span', {
+  return _c('p', [_vm._v("Demo 6: Mininum number of nights:\n            "), _c('span', {
     staticClass: "parameter"
   }, [_vm._v("7")])])
 },function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_vm._v("Demo 7: Maximum number of nights: "), _c('span', {
+  return _c('p', [_vm._v("Demo 7: Maximum number of nights:\n            "), _c('span', {
     staticClass: "parameter"
   }, [_vm._v("5")])])
 },function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_vm._v(" Demo 8:Range between "), _c('span', {
+  return _c('p', [_vm._v(" Demo 8:Range between\n            "), _c('span', {
     staticClass: "parameter"
-  }, [_vm._v("4")]), _vm._v(" and "), _c('span', {
+  }, [_vm._v("4")]), _vm._v(" and\n            "), _c('span', {
     staticClass: "parameter"
   }, [_vm._v("8")]), _vm._v(" nights")])
 }]
@@ -12974,4 +12928,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.b106684.js.map
+//# sourceMappingURL=app.02d2b4c.js.map

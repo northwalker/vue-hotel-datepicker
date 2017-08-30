@@ -3,10 +3,11 @@ A Vue.js responsive date range picker for hotels or date range selection, that d
 
 ## Demo
 
- - Demo page 
-   [Github Page](https://northwalker.github.io/vue-hotel-datepicker/)
+#### Github page 
 
- - Running at development
+[https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
+
+#### Running at development 
 
 ```git clone https://github.com/northwalker/vue-hotel-datepicker.git```
 
@@ -18,18 +19,33 @@ A Vue.js responsive date range picker for hotels or date range selection, that d
 ## Installation / Usage
 
 #### HTML
+
+Download this repo and copy file ```/dist/vue-hotel-datepicker.min.js``` to ```/<your-component-folder-path>/```, and add below code to your html file. 
 ```html
-<script type="text/javascript" src="./<your-component-folder-path>/vue-hotel-datepicker.min.js"></script>
+<script type="text/javascript" src="/<your-component-folder-path>/vue-hotel-datepicker.min.js"></script>
 ```
 
 #### Javascript
+Use ```npm``` or ```yarn``` add dependence to your project's ```package.json```
 ```javascript
-import HotelDatePicker from './<your-component-folder-path>/vue-hotel-datepicker.min.js'
+npm install git@github.com:northwalker/vue-hotel-datepicker.git
+```
+
+or 
+
+```javascript
+yarn add git@github.com:northwalker/vue-hotel-datepicker.git
+```
+
+and import or require component to your vue app 
+
+```javascript
+import VueHotelDatePicker from '/<your-component-folder-path>/vue-hotel-datepicker.min.js'
 
 export default {
   components: {
-    HotelDatePicker,
-  },
+    VueHotelDatePicker,
+  }
 }
 ```
 

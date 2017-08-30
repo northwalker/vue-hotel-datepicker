@@ -1,16 +1,16 @@
 {
   "name": "vue-hotel-datepicker",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Vue.js date range picker",
   "author": "Northwalker <northwalker28@gmail.com>",
   "license": "MIT",
   "main": "dist/vue-hotel-datepicker.min.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot --config ./build/webpack.dev.conf.js",
-    "prebuild": "rm -rf dist",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
-    "predocs": "rm -rf docs",
-    "docs": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
+    "prebuild:dist": "rm -rf dist",
+    "build:dist": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
+    "prebuild": "rm -rf docs",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot --config ./build/webpack.config.js",
     "lint": "eslint ./src/*.vue ./src/*.js "
   },

@@ -2,11 +2,20 @@
   <div id="app">
     <div class="container">
       <section class="banner">
-        <div>
+        <div class="title">
           <h1>Vue Hotel Datepicker</h1>
         </div>
-        <div>
+        <div class="subTitle">
           <h3>A vue.js date range picker for hotel and more. </h3>
+        </div>
+        <div class="links">
+          <div>
+            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/master.zip">Download ZIP</a>
+          </div>
+          <div class="linkTextWrapper">
+            <a class="linkText" target="_blank" href="https://github.com/northwalker/vue-hotel-datepicker">View on Github</a>
+            <a class="linkText" target="_blank" href="https://github.com/northwalker/vue-hotel-datepicker/issues">Report issue</a>
+          </div>
         </div>
       </section>
       <section class="content" id="demo">
@@ -16,116 +25,61 @@
           </div>
           <div class="demoDatepicker">
             <p>Demo 1: Default simple range datepicker with an predafined input</p>
-            <HotelDatePicker
-            :ref="dpkr1.datePickerId"
-            :active="dpkr1.active"
-            :datePickerId="dpkr1.datePickerId"
-            :placeholder="dpkr1.placeholder"
-            :selectForward="dpkr1.selectForward"
-            :separator="dpkr1.separator"
-            :showTopbar="dpkr1.showTopbar"
-            :hoveringTooltip="dpkr1.hoveringTooltip"
-            v-on:updateDateRange="dpkr1.updateDateRange"
-            v-on:cancelUpdateDateRange="dpkr1.cancelUpdateDateRange" />
+            <HotelDatePicker :ref="dpkr1.datePickerId" :active="dpkr1.active" :datePickerId="dpkr1.datePickerId" :placeholder="dpkr1.placeholder" :selectForward="dpkr1.selectForward" :separator="dpkr1.separator" :showTopbar="dpkr1.showTopbar" :hoveringTooltip="dpkr1.hoveringTooltip" v-on:updateDateRange="dpkr1.updateDateRange" v-on:cancelUpdateDateRange="dpkr1.cancelUpdateDateRange" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 2: Default hotel style range datepicker with a predefined value in the input </p>
-            <HotelDatePicker
-            :ref="dpkr2.datePickerId"
-            :datePickerId="dpkr2.datePickerId"
-            :placeholder="dpkr2.placeholder" />
+            <HotelDatePicker :ref="dpkr2.datePickerId" :datePickerId="dpkr2.datePickerId" :placeholder="dpkr2.placeholder" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 3: Default hotel style range datepicker setting with an empty input</p>
-            <HotelDatePicker
-            :ref="dpkr3.datePickerId"
-            :datePickerId="dpkr3.datePickerId"
-            :placeholder="dpkr3.placeholder" />
+            <HotelDatePicker :ref="dpkr3.datePickerId" :datePickerId="dpkr3.datePickerId" :placeholder="dpkr3.placeholder" />
           </div>
           <div class="demoDatepicker">
-            <p>Demo 4: Custom format: <span class="parameter">{{dpkr4.format}}</span></p>
-            <HotelDatePicker
-              :ref="dpkr4.datePickerId"
-              :datePickerId="dpkr4.datePickerId"
-              :placeholder="dpkr4.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :format="dpkr4.format" />
+            <p>Demo 4: Custom format:
+              <span class="parameter">{{dpkr4.format}}</span>
+            </p>
+            <HotelDatePicker :ref="dpkr4.datePickerId" :datePickerId="dpkr4.datePickerId" :placeholder="dpkr4.placeholder" :autoClose="autoClose" :separator="separator" :format="dpkr4.format" />
           </div>
           <div class="demoDatepicker">
-            <p>Demo 5: Start of week: <span class="parameter">{{dpkr5.startOfWeek}}</span></p>
-            <HotelDatePicker
-              :ref="dpkr5.datePickerId"
-              :datePickerId="dpkr5.datePickerId"
-              :placeholder="dpkr5.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :startOfWeek="dpkr5.startOfWeek" />
+            <p>Demo 5: Start of week:
+              <span class="parameter">{{dpkr5.startOfWeek}}</span>
+            </p>
+            <HotelDatePicker :ref="dpkr5.datePickerId" :datePickerId="dpkr5.datePickerId" :placeholder="dpkr5.placeholder" :autoClose="autoClose" :separator="separator" :startOfWeek="dpkr5.startOfWeek" />
           </div>
           <div class="demoDatepicker">
-            <p>Demo 6: Mininum number of nights: <span class="parameter">7</span> </p>
-            <HotelDatePicker
-              :ref="dpkr6.datePickerId"
-              :datePickerId="dpkr6.datePickerId"
-              :placeholder="dpkr6.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :minNights="dpkr6.minNights"  />
+            <p>Demo 6: Mininum number of nights:
+              <span class="parameter">7</span>
+            </p>
+            <HotelDatePicker :ref="dpkr6.datePickerId" :datePickerId="dpkr6.datePickerId" :placeholder="dpkr6.placeholder" :autoClose="autoClose" :separator="separator" :minNights="dpkr6.minNights" />
           </div>
           <div class="demoDatepicker">
-            <p>Demo 7: Maximum number of nights: <span class="parameter">5</span></p>
-            <HotelDatePicker
-              :ref="dpkr7.datePickerId"
-              :datePickerId="dpkr7.datePickerId"
-              :placeholder="dpkr7.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :maxNights="dpkr7.maxNights" />
+            <p>Demo 7: Maximum number of nights:
+              <span class="parameter">5</span>
+            </p>
+            <HotelDatePicker :ref="dpkr7.datePickerId" :datePickerId="dpkr7.datePickerId" :placeholder="dpkr7.placeholder" :autoClose="autoClose" :separator="separator" :maxNights="dpkr7.maxNights" />
           </div>
           <div class="demoDatepicker">
-            <p> Demo 8:Range between <span class="parameter">4</span> and <span class="parameter">8</span> nights</p>
-            <HotelDatePicker
-              :ref="dpkr8.datePickerId"
-              :datePickerId="dpkr8.datePickerId"
-              :placeholder="dpkr8.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :minNights="dpkr8.minNights"
-              :maxNights="dpkr8.maxNights" />
+            <p> Demo 8:Range between
+              <span class="parameter">4</span> and
+              <span class="parameter">8</span> nights</p>
+            <HotelDatePicker :ref="dpkr8.datePickerId" :datePickerId="dpkr8.datePickerId" :placeholder="dpkr8.placeholder" :autoClose="autoClose" :separator="separator" :minNights="dpkr8.minNights" :maxNights="dpkr8.maxNights" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 9: Don't allow ranges before custom date:
               <span class="parameter"> {{dpkr9.startDate}} </span>
             </p>
-            <HotelDatePicker
-              :ref="dpkr9.datePickerId"
-              :datePickerId="dpkr9.datePickerId"
-              :placeholder="dpkr9.placeholder"
-              :startDate="dpkr9.startDate"
-              :autoClose="autoClose"
-              :separator="separator" />
+            <HotelDatePicker :ref="dpkr9.datePickerId" :datePickerId="dpkr9.datePickerId" :placeholder="dpkr9.placeholder" :startDate="dpkr9.startDate" :autoClose="autoClose" :separator="separator" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 10: Don't allow ranges after custom date:
               <span class="parameter"> {{dpkr10.endDate}} </span>
             </p>
-            <HotelDatePicker
-              :ref="dpkr10.datePickerId"
-              :datePickerId="dpkr10.datePickerId"
-              :placeholder="dpkr10.placeholder"
-              :endDate="dpkr10.endDate"
-              :autoClose="autoClose"
-              :separator="separator" />
+            <HotelDatePicker :ref="dpkr10.datePickerId" :datePickerId="dpkr10.datePickerId" :placeholder="dpkr10.placeholder" :endDate="dpkr10.endDate" :autoClose="autoClose" :separator="separator" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 11: Don't allow selections in both directions (first click = first date, second click = second date)</p>
-            <HotelDatePicker
-              :ref="dpkr11.datePickerId"
-              :datePickerId="dpkr11.datePickerId"
-              :placeholder="dpkr11.placeholder"
-              :selectForward="dpkr11.selectForward"
-              :autoClose="autoClose"
-              :separator="separator" />
+            <HotelDatePicker :ref="dpkr11.datePickerId" :datePickerId="dpkr11.datePickerId" :placeholder="dpkr11.placeholder" :selectForward="dpkr11.selectForward" :autoClose="autoClose" :separator="separator" />
           </div>
           <div class="demoDatepicker">
             <p>
@@ -134,48 +88,23 @@
                 {{dpkr12.disabledDates}}
               </span>
             </p>
-            <HotelDatePicker
-              :ref="dpkr12.datePickerId"
-              :datePickerId="dpkr12.datePickerId"
-              :placeholder="dpkr12.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :disabledDates="dpkr12.disabledDates" />
+            <HotelDatePicker :ref="dpkr12.datePickerId" :datePickerId="dpkr12.datePickerId" :placeholder="dpkr12.placeholder" :autoClose="autoClose" :separator="separator" :disabledDates="dpkr12.disabledDates" />
           </div>
           <div class="demoDatepicker">
             <p>Demo :13 Disable some dates but allow the checkout in those dates. </p>
-            <HotelDatePicker
-              :ref="dpkr13.datePickerId"
-              :datePickerId="dpkr13.datePickerId"
-              :placeholder="dpkr13.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :disabledDates="dpkr13.disabledDates"
-              :enableCheckout="dpkr13.enableCheckout" />
+            <HotelDatePicker :ref="dpkr13.datePickerId" :datePickerId="dpkr13.datePickerId" :placeholder="dpkr13.placeholder" :autoClose="autoClose" :separator="separator" :disabledDates="dpkr13.disabledDates" :enableCheckout="dpkr13.enableCheckout" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 14: Don't close the datepicker after selection</p>
-            <HotelDatePicker
-              :ref="dpkr14.datePickerId"
-              :datePickerId="dpkr14.datePickerId"
-              :placeholder="dpkr14.placeholder"
-              :autoClose="dpkr14.autoClose" />
+            <HotelDatePicker :ref="dpkr14.datePickerId" :datePickerId="dpkr14.datePickerId" :placeholder="dpkr14.placeholder" :autoClose="dpkr14.autoClose" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 15: Use datepicker in another language (繁體中文)</p>
-            <HotelDatePicker
-              :ref="dpkr15.datePickerId"
-              :datePickerId="dpkr15.datePickerId"
-              :placeholder="dpkr15.placeholder"
-              :autoClose="autoClose"
-              :separator="separator"
-              :i18n="dpkr15.i18n" />
+            <HotelDatePicker :ref="dpkr15.datePickerId" :datePickerId="dpkr15.datePickerId" :placeholder="dpkr15.placeholder" :autoClose="autoClose" :separator="separator" :i18n="dpkr15.i18n" />
           </div>
         </div>
       </section>
-      <section class="footer">
-
-      </section>
+      <section class="footer"></section>
     </div>
   </div>
 </template>
@@ -232,9 +161,9 @@ export default {
       separator: ' ~ ',         // common setting
       selectForward: false,     // common setting
       hoveringTooltip() {       // common setting
-          // Overwrite default boolean
-          // Not working when value is false (boolean)
-          return false;
+        // Overwrite default boolean
+        // Not working when value is false (boolean)
+        return false;
       },
       dpkr1: {
         value: '',
@@ -312,7 +241,7 @@ export default {
         placeholder: 'DatePicker example 10',
         endDate: fecha.format(new Date(new Date().getTime() + 25 * 24 * 60 * 60 * 1000), 'YYYY-MM-DD')
       },
-       dpkr11: {
+      dpkr11: {
         value: '',
         datePickerId: 'datePickerId11',
         placeholder: 'DatePicker example 11',
@@ -330,7 +259,7 @@ export default {
           fecha.format(new Date(new Date().getTime() + 16 * 24 * 60 * 60 * 1000), 'YYYY-MM-DD')
         ]
       },
-       dpkr13: {
+      dpkr13: {
         value: '',
         datePickerId: 'datePickerId13',
         placeholder: 'DatePicker example 13',
@@ -426,20 +355,19 @@ body {
 }
 
 #app {
-  // width: 100vw;
   .container {
-    margin: 0 auto; // width: 560px;
+    margin: 0 auto; //
+    // width: 560px;
     @media (min-width: 320px) {
       width: 300px;
     }
     @media (min-width: 480px) {
       width: 460px;
     }
-    @media (min-width: 768px) {
-      width: 728px;
+    @media (min-width: 481px) and (max-width: 1023px) {
+      width: calc(100vw - 80px);
     }
     @media (min-width: 1024px) {
-      // width: 728px;
       width: 960px;
     }
     .banner {
@@ -449,25 +377,64 @@ body {
       padding-top: 30px;
       padding-bottom: 30px;
       margin-bottom: 30px;
-      border-bottom: 1px solid #D3D3D3;
+      border-bottom: 1px solid #9A9A9A;
 
-      h1 {
-        font-size: 32px;
-        color: #484c55;
+      .title {
+        h1 {
+          font-size: 40px;
+          color: #484c55;
+        }
       }
-      h3 {
-        font-size: 20px;
-        color: #484c55;
+      .subTitle {
+        h3 {
+          font-size: 24px;
+          color: #484c55;
+        }
+      }
+      .links {
+        .linkDownload {
+          display: block;
+          width: 160px;
+          padding: 16px;
+          font-size: 18px;
+          color: #009EDE;
+          background-color: transparent;
+          border: 1px solid #009EDE;
+          border-radius: 6px;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          transition: .5s ease;
+          &:hover {
+            cursor: pointer;
+            color: #FFFFFF;
+            background-color: #009EDE;
+          }
+        }
+        .linkTextWrapper {
+          margin: 30px 0 0;
+        }
+        a.linkText {
+          margin-top: 20px;
+          margin-right: 20px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #9A9A9A;
+          transition: .5s ease;
+          &:hover {
+            cursor: pointer;
+            color: #009EDE;
+          }
+        }
       }
     }
 
     .demoContainer {
       margin-bottom: 270px;
       .demoDatepicker {
-        width: 100%;
         margin: 40px 20px;
         .p {
-          line-height: 22px
+          line-height: 22px;
         }
         .parameter {
           border-radius: 3px;
@@ -487,7 +454,7 @@ body {
         line-height: normal;
         box-sizing: border-box;
         padding: 10px 20px;
-        border: 1px solid #dcdcdc;
+        border: 1px solid #DCDCDC;
         &::placeholder {
           color: #E5E5E5;
         }

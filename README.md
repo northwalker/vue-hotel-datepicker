@@ -28,13 +28,13 @@ Download this repo and copy file ```/dist/vue-hotel-datepicker.min.js``` to ```/
 #### Javascript
 Use ```npm``` or ```yarn``` add dependence to your project's ```package.json```
 ```javascript
-npm install git@github.com:northwalker/vue-hotel-datepicker.git
+npm install https://github.com/northwalker/vue-hotel-datepicker.git
 ```
 
 or 
 
 ```javascript
-yarn add git@github.com:northwalker/vue-hotel-datepicker.git
+yarn add https://github.com/northwalker/vue-hotel-datepicker.git
 ```
 
 and import or require component to your vue app 

@@ -22,9 +22,9 @@ body {
       width: 460px;
 }
 }
-@media (min-width: 768px) {
+@media (min-width: 481px) and (max-width: 1023px) {
 #app .container {
-      width: 728px;
+      width: calc(100vw - 80px);
 }
 }
 @media (min-width: 1024px) {
@@ -36,21 +36,54 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #9A9A9A;
 }
-#app .container .banner h1 {
-      font-size: 32px;
+#app .container .banner .title h1 {
+      font-size: 40px;
       color: #484c55;
 }
-#app .container .banner h3 {
-      font-size: 20px;
+#app .container .banner .subTitle h3 {
+      font-size: 24px;
       color: #484c55;
+}
+#app .container .banner .links .linkDownload {
+      display: block;
+      width: 160px;
+      padding: 16px;
+      font-size: 18px;
+      color: #009EDE;
+      background-color: transparent;
+      border: 1px solid #009EDE;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      transition: .5s ease;
+}
+#app .container .banner .links .linkDownload:hover {
+        cursor: pointer;
+        color: #FFFFFF;
+        background-color: #009EDE;
+}
+#app .container .banner .links .linkTextWrapper {
+      margin: 30px 0 0;
+}
+#app .container .banner .links a.linkText {
+      margin-top: 20px;
+      margin-right: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #9A9A9A;
+      transition: .5s ease;
+}
+#app .container .banner .links a.linkText:hover {
+        cursor: pointer;
+        color: #009EDE;
 }
 #app .container .demoContainer {
     margin-bottom: 270px;
 }
 #app .container .demoContainer .demoDatepicker {
-      width: 100%;
       margin: 40px 20px;
 }
 #app .container .demoContainer .demoDatepicker .p {
@@ -73,7 +106,7 @@ body {
       line-height: normal;
       box-sizing: border-box;
       padding: 10px 20px;
-      border: 1px solid #dcdcdc;
+      border: 1px solid #DCDCDC;
 }
 #app .container .demoContainer input::-webkit-input-placeholder {
         color: #E5E5E5;
@@ -397,11 +430,11 @@ body {
   }
 }
 
-* {
-  box-sizing: border-box;
-}
 .datepicker {
   border-radius: 0px;
+}
+.datepicker * {
+    box-sizing: border-box;
 }
 .datepicker__input {
     outline: none;
@@ -429,7 +462,10 @@ body {
 .datepicker__month-day--today {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 0px 1px #009EDE inset;
-    color: #393332;
+}
+.datepicker__month-day--today.datepicker__month-day--invalid {
+      color: #e8ebf4;
+      box-shadow: 0px 0px 0px 1px #e8ebf4 inset;
 }
 .datepicker__month-day--selected {
     background-color: #C8EAF8;
@@ -469,4 +505,4 @@ body {
 }
 }
 
-/*# sourceMappingURL=app.64788e0.css.map*/
+/*# sourceMappingURL=app.1d92a73.css.map*/

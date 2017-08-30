@@ -110,7 +110,7 @@ module.exports = {
         : '[name].css'
     }),
     new HtmlWebpackPlugin({
-      title: 'Vue Hotel Datepicker Demo',
+      title: 'Vue Hotel Datepicker',
       inject: true,
       filename: 'index.html',
       template: path.join(__dirname, '../src/index.html'),

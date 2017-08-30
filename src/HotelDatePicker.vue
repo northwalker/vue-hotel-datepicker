@@ -59,7 +59,7 @@ export default {
     },
     startDate: {
       type: [Date, String],
-      default: function () {
+      default: function() {
         return new Date()
       }
     },
@@ -80,7 +80,7 @@ export default {
     },
     disabledDates: {
       type: Array,
-      default: function () { return [] }
+      default: function() { return [] }
     },
     enableCheckout: {
       type: Boolean,
@@ -144,7 +144,7 @@ export default {
       else
         this.open();
     },
-    open: function () {
+    open: function() {
       setTimeout(() => {
         this.hdpkr.open();
       }, 0)
@@ -178,7 +178,7 @@ export default {
       this.$emit('updateDateRange', newDate);
     }
   },
-  mounted: function () {
+  mounted: function() {
 
     // const containerElement = document.querySelector(this.container);
     // console.log('containerElement', containerElement)
@@ -217,15 +217,15 @@ export default {
 
 <style lang="scss">
 @import '../vendor/hotel-datepicker.css';
-* {
-  box-sizing: border-box;
-}
+
 
 // ///////////////////////////////////////////////
 // Overwrite and customize datepicker style
 // ///////////////////////////////////////////////
 .datepicker {
-  // font-size: 16px;
+  * {
+    box-sizing: border-box;
+  } // font-size: 16px;
   // line-height: 16px;
   border-radius: 0px;
   &__input {
@@ -259,8 +259,12 @@ export default {
     }
     &--today {
       background-color: #FFFFFF; // border: 1px solid #009EDE;
-      box-shadow: 0px 0px 0px 1px #009EDE inset;
-      color: #393332;
+      box-shadow: 0px 0px 0px 1px #009EDE inset; //
+      // color: #393332;
+      &.datepicker__month-day--invalid {
+        color: #e8ebf4;
+        box-shadow: 0px 0px 0px 1px #e8ebf4 inset;
+      }
     }
     &--selected {
       // background-color: rgba(0, 158, 222, 0.5);

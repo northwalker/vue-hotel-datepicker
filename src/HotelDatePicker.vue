@@ -29,13 +29,13 @@ const defaultDatei18n = {
 };
 
 export default {
-  name: 'HotelDatePicker',
+  name: 'HotelDatepicker',
   components: {
   },
   props: {
     datePickerId: {
       type: String,
-      default: '1'
+      default: 'datepickerId-' + new Date().getTime().toString() // simulate random
     },
     placeholder: {
       type: String,
@@ -123,10 +123,10 @@ export default {
       handler(newVal, oldVal) {
         if (!this.hdpkr.isOpen && this.hdpkr.changed) {
           const date = document.querySelector(`#${this.datePickerId}`).value;
-          this.$emit('updateDateRange', date);
+          this.$emit('updateDateRange', date, this.datePickerId);
         }
         else if (!this.hdpkr.isOpen && !this.hdpkr.changed) {
-          this.$emit('cancelUpdateDateRange');
+          this.$emit('cancelUpdateDateRange', this.datePickerId);
         }
       }
     }
@@ -175,7 +175,7 @@ export default {
     updateDateRange(e) {
       const newDate = document.querySelector(`#${this.datePickerId}`).value;
       // console.log('HotelDatepicker updateDateRange', newDate, e);
-      this.$emit('updateDateRange', newDate);
+      this.$emit('updateDateRange', newDate, this.datePickerId);
     }
   },
   mounted: function() {
@@ -223,18 +223,34 @@ export default {
 // Overwrite and customize datepicker style
 // ///////////////////////////////////////////////
 .datepicker {
+  $closeBtnColor: #007BFF;
+  $primaryColor: #007BFF;
+  $selectedColor: #007BFF;
+  $selectedRangeColor: #B2D7FF;
+
   * {
     box-sizing: border-box;
-  } // font-size: 16px;
+  } //
+  // font-size: 16px;
   // line-height: 16px;
   border-radius: 0px;
   &__input {
+    width: 240px;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 13px;
+    line-height: normal;
+    border: 1px solid #DCDCDC;
     outline: none;
+    &::placeholder {
+      color: #E5E5E5;
+    }
   }
   &__inner {}
   &__week {
     &-days {
-      height: 32px; // background-color: #7D7C7D;
+      height: 32px; //
+      // background-color: #7D7C7D;
     }
     &-name {
       font-size: 12px;
@@ -247,20 +263,20 @@ export default {
       text-transform: initial;
     }
     &-caption {
-      height: 40px; // background-color: #7D7C7D;
+      height: 40px; //
+      // background-color: #7D7C7D;
     }
   }
   &__month-day {
     &--valid {
       color: #393332;
       &:hover {
-        background-color: #009EDE;
+        background-color: $primaryColor;
       }
     }
     &--today {
-      background-color: #FFFFFF; // border: 1px solid #009EDE;
-      box-shadow: 0px 0px 0px 1px #009EDE inset; //
-      // color: #393332;
+      background-color: #FFFFFF;
+      box-shadow: 0px 0px 0px 1px $primaryColor inset;
       &.datepicker__month-day--invalid {
         color: #e8ebf4;
         box-shadow: 0px 0px 0px 1px #e8ebf4 inset;
@@ -268,31 +284,30 @@ export default {
     }
     &--selected {
       // background-color: rgba(0, 158, 222, 0.5);
-      background-color: #C8EAF8; // color: #FFFFFF;
+      background-color: $selectedRangeColor;
       color: #393332;
     }
     &--hovering {
       // background-color: rgba(0, 158, 222, 0.2) !important;
-      background-color: #C8EAF8; // color: #FFFFFF;
+      background-color: $selectedRangeColor;
       color: #393332;
     }
     &--first-day-selected {
-      background-color: #009EDE;
+      background-color: $selectedColor;
     }
     &--last-day-selected {
-      background-color: #009EDE;
+      background-color: $selectedColor;
     }
   }
   &__month-button {
     background-color: #FFFFFF;
     &:hover {
-      background-color: #009EDE;
+      background-color: $primaryColor;
       color: #FFFFFF;
     }
   }
   &__close-button {
-    background-color: #009EDE;
-    background-color: #009EDE;
+    background-color: $closeBtnColor;
   }
   &__tooltip {
     background-color: rgba(0, 0, 0, 0.7);

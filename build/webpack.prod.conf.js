@@ -6,7 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 config.devtool = '#source-map'
 config.output.libraryTarget = 'umd'
-config.output.library = 'VueHotelDatePicker'
+config.output.library = 'VueHotelDatepicker'
 config.entry = {
   // 'vue-hotel-datepicker': path.resolve(__dirnme, '../src/HotelDatePicker.vue'),
   'vue-hotel-datepicker.min': path.resolve(__dirname, '../src/HotelDatePicker.vue')

@@ -10666,6 +10666,14 @@ var Component = normalizeComponent(
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fecha__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fecha___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fecha__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HotelDatePicker_vue__ = __webpack_require__(8);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10845,16 +10853,6 @@ var i18nTWData = {
           // Overwrite default boolean
           // Not working when value is false (boolean)
           return false;
-        },
-        updateDateRange: function updateDateRange(date) {
-          // console.log('dpkr1 on updateDateRange', date);
-          // You can $emit event to praent
-          // EX: this.$emit('updateDateRange');
-        },
-        cancelUpdateDateRange: function cancelUpdateDateRange() {
-          // console.log('dpkr1 on cancelUpdateDateRange');
-          // You can $emit event to praent
-          // EX: this.$emit('cancelUpdateDateRange');
         }
       },
       dpkr2: {
@@ -10941,6 +10939,12 @@ var i18nTWData = {
         placeholder: 'DatePicker example 15',
         autoClose: false,
         i18n: i18nTWData
+      },
+      dpkr16: {
+        value: '',
+        datePickerId: 'datePickerId16',
+        placeholder: 'DatePicker example 16',
+        autoClose: true
       }
     };
   },
@@ -10949,25 +10953,26 @@ var i18nTWData = {
   computed: {},
   methods: {
     toggle: function toggle(datePickerId) {
-      this.$refs[this.datePickerId].toggle();
+      console.log('toggle', datePickerId);
+      this.$refs[datePickerId].toggle();
     },
     getValue: function getValue(datePickerId) {
-      return this.$refs[this.datePickerId].getValue();
+      return this.$refs[datePickerId].getValue();
     },
-    setValue: function setValue(val) {
+    setValue: function setValue(datePickerId, val) {
       this.$refs[this.datePickerId].setValue(val);
     },
-    open: function open(datePickerId) {
-      this.$refs[this.datePickerId].open();
-      if (this.sinceDate && this.untilDate) {
-        this.$refs[this.datePickerId].setRange(this.sinceDate, this.untilDate);
+    open: function open(datePickerId, sinceDate, untilDate) {
+      this.$refs[datePickerId].open();
+      if (sinceDate && untilDate) {
+        this.$refs[datePickerId].setRange(sinceDate, untilDate);
       }
     },
     close: function close(datePickerId) {
-      this.$refs[this.datePickerId].close();
+      this.$refs[datePickerId].close();
     },
     getDatePicker: function getDatePicker(datePickerId) {
-      var hdpkr = this.$refs[this.datePickerId].getDatePicker();
+      var hdpkr = this.$refs[datePickerId].getDatePicker();
       // console.log(hdpkr);
     },
     setRange: function setRange(datePickerId, d1, d2) {
@@ -10976,6 +10981,14 @@ var i18nTWData = {
     hideDateInput: function hideDateInput(dpkr) {
       var hdpkrInput = document.querySelector('#' + dpkr.datePickerId);
       if (hdpkrInput && hdpkrInput.style) hdpkrInput.style.display = 'none';
+    },
+
+    updateDateRange: function updateDateRange(newDateRange, datePickerId) {
+      var _this = this;
+
+      Object.keys(this.$data).map(function (key) {
+        if (_typeof(_this.$data[key]) === 'object') if (_this.$data[key].datePickerId === datePickerId) _this.$data[key].value = newDateRange;
+      });
     }
   },
   mounted: function mounted() {
@@ -10990,6 +11003,10 @@ var i18nTWData = {
     var demo2_d1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // tomorrow
     var demo2_d2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after tomorrow
     this.setRange(this.dpkr2.datePickerId, demo2_d1, demo2_d2);
+
+    // Demo example 16
+    var dpkr16Element = document.querySelector('#' + this.dpkr16.datePickerId);
+    if (dpkr16Element) dpkr16Element.style.display = 'none';
   }
 });
 
@@ -11068,12 +11085,12 @@ var defaultDatei18n = {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'HotelDatePicker',
+  name: 'HotelDatepicker',
   components: {},
   props: {
     datePickerId: {
       type: String,
-      default: '1'
+      default: 'datepickerId-' + new Date().getTime().toString() // simulate random
     },
     placeholder: {
       type: String,
@@ -11166,9 +11183,9 @@ var defaultDatei18n = {
       handler: function handler(newVal, oldVal) {
         if (!this.hdpkr.isOpen && this.hdpkr.changed) {
           var date = document.querySelector('#' + this.datePickerId).value;
-          this.$emit('updateDateRange', date);
+          this.$emit('updateDateRange', date, this.datePickerId);
         } else if (!this.hdpkr.isOpen && !this.hdpkr.changed) {
-          this.$emit('cancelUpdateDateRange');
+          this.$emit('cancelUpdateDateRange', this.datePickerId);
         }
       }
     }
@@ -11221,7 +11238,7 @@ var defaultDatei18n = {
     updateDateRange: function updateDateRange(e) {
       var newDate = document.querySelector('#' + this.datePickerId).value;
       // console.log('HotelDatepicker updateDateRange', newDate, e);
-      this.$emit('updateDateRange', newDate);
+      this.$emit('updateDateRange', newDate, this.datePickerId);
     }
   },
   mounted: function mounted() {
@@ -12710,10 +12727,6 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "separator": _vm.dpkr1.separator,
       "showTopbar": _vm.dpkr1.showTopbar,
       "hoveringTooltip": _vm.dpkr1.hoveringTooltip
-    },
-    on: {
-      "updateDateRange": _vm.dpkr1.updateDateRange,
-      "cancelUpdateDateRange": _vm.dpkr1.cancelUpdateDateRange
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "demoDatepicker"
@@ -12873,7 +12886,27 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "separator": _vm.separator,
       "i18n": _vm.dpkr15.i18n
     }
-  })], 1)])]), _vm._v(" "), _c('section', {
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "demoDatepicker"
+  }, [_c('p', [_vm._v("Demo 16: Trigger by other click event")]), _vm._v(" "), (_vm.dpkr16.value) ? _c('p', [_vm._v("Your selected date range: " + _vm._s(_vm.dpkr16.value))]) : _vm._e(), _vm._v(" "), _c('HotelDatePicker', {
+    ref: _vm.dpkr16.datePickerId,
+    attrs: {
+      "datePickerId": _vm.dpkr16.datePickerId,
+      "placeholder": _vm.dpkr16.placeholder,
+      "autoClose": _vm.dpkr16.autoClose,
+      "separator": _vm.separator
+    },
+    on: {
+      "updateDateRange": _vm.updateDateRange
+    }
+  }), _vm._v(" "), _c('a', {
+    staticClass: "btn",
+    on: {
+      "click": function($event) {
+        _vm.toggle(_vm.dpkr16.datePickerId)
+      }
+    }
+  }, [_vm._v(" Click me! ")])], 1)])]), _vm._v(" "), _c('section', {
     staticClass: "footer"
   })])])
 }
@@ -12928,4 +12961,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.02d2b4c.js.map
+//# sourceMappingURL=app.4a668fa.js.map

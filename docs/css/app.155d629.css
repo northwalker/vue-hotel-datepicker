@@ -51,19 +51,20 @@ body {
       width: 160px;
       padding: 16px;
       font-size: 18px;
-      color: #009EDE;
-      background-color: transparent;
-      border: 1px solid #009EDE;
-      border-radius: 6px;
       text-align: center;
       text-decoration: none;
+      vertical-align: middle;
+      color: #007BFF;
+      border: 1px solid #007BFF;
+      border-radius: 6px;
+      background-color: transparent;
       outline: none;
-      transition: .5s ease;
+      transition: .3s ease;
 }
 #app .container .banner .links .linkDownload:hover {
         cursor: pointer;
         color: #FFFFFF;
-        background-color: #009EDE;
+        background-color: #007BFF;
 }
 #app .container .banner .links .linkTextWrapper {
       margin: 30px 0 0;
@@ -74,11 +75,11 @@ body {
       font-size: 16px;
       text-decoration: none;
       color: #9A9A9A;
-      transition: .5s ease;
+      transition: .3s ease;
 }
 #app .container .banner .links a.linkText:hover {
         cursor: pointer;
-        color: #009EDE;
+        color: #007BFF;
 }
 #app .container .demoContainer {
     margin-bottom: 270px;
@@ -87,35 +88,31 @@ body {
       margin: 40px 20px;
 }
 #app .container .demoContainer .demoDatepicker .p {
-        line-height: 22px;
+        line-height: 20px;
+}
+#app .container .demoContainer .demoDatepicker .btn {
+        display: block;
+        width: 120px;
+        padding: 8px 12px;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #007BFF;
+        border-color: #007BFF;
+        border-radius: 8px;
+        transition: .15s;
+        cursor: pointer;
 }
 #app .container .demoContainer .demoDatepicker .parameter {
         border-radius: 3px;
         padding: 3px;
         background-color: #E5E5E5;
-        color: #009EDE;
+        color: #007BFF;
         font-size: 14px;
 }
 #app .container .demoContainer .demoDatepicker input:focus {
-        border-color: #009EDE;
-}
-#app .container .demoContainer input {
-      font-size: 13px;
-      width: 240px;
-      margin: 0;
-      line-height: normal;
-      box-sizing: border-box;
-      padding: 10px 20px;
-      border: 1px solid #DCDCDC;
-}
-#app .container .demoContainer input::-webkit-input-placeholder {
-        color: #E5E5E5;
-}
-#app .container .demoContainer input:-ms-input-placeholder {
-        color: #E5E5E5;
-}
-#app .container .demoContainer input::placeholder {
-        color: #E5E5E5;
+        border-color: #007BFF;
 }
 #app .container .footer {
     height: 10px;
@@ -437,7 +434,22 @@ body {
     box-sizing: border-box;
 }
 .datepicker__input {
+    width: 240px;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 13px;
+    line-height: normal;
+    border: 1px solid #DCDCDC;
     outline: none;
+}
+.datepicker__input::-webkit-input-placeholder {
+      color: #E5E5E5;
+}
+.datepicker__input:-ms-input-placeholder {
+      color: #E5E5E5;
+}
+.datepicker__input::placeholder {
+      color: #E5E5E5;
 }
 .datepicker__week-days {
     height: 32px;
@@ -457,40 +469,39 @@ body {
     color: #393332;
 }
 .datepicker__month-day--valid:hover {
-      background-color: #009EDE;
+      background-color: #007BFF;
 }
 .datepicker__month-day--today {
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 0px 1px #009EDE inset;
+    box-shadow: 0px 0px 0px 1px #007BFF inset;
 }
 .datepicker__month-day--today.datepicker__month-day--invalid {
       color: #e8ebf4;
       box-shadow: 0px 0px 0px 1px #e8ebf4 inset;
 }
 .datepicker__month-day--selected {
-    background-color: #C8EAF8;
+    background-color: #B2D7FF;
     color: #393332;
 }
 .datepicker__month-day--hovering {
-    background-color: #C8EAF8;
+    background-color: #B2D7FF;
     color: #393332;
 }
 .datepicker__month-day--first-day-selected {
-    background-color: #009EDE;
+    background-color: #007BFF;
 }
 .datepicker__month-day--last-day-selected {
-    background-color: #009EDE;
+    background-color: #007BFF;
 }
 .datepicker__month-button {
     background-color: #FFFFFF;
 }
 .datepicker__month-button:hover {
-      background-color: #009EDE;
+      background-color: #007BFF;
       color: #FFFFFF;
 }
 .datepicker__close-button {
-    background-color: #009EDE;
-    background-color: #009EDE;
+    background-color: #007BFF;
 }
 .datepicker__tooltip {
     background-color: rgba(0, 0, 0, 0.7);
@@ -505,4 +516,4 @@ body {
 }
 }
 
-/*# sourceMappingURL=app.1d92a73.css.map*/
+/*# sourceMappingURL=app.155d629.css.map*/

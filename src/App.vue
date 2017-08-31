@@ -25,7 +25,7 @@
           </div>
           <div class="demoDatepicker">
             <p>Demo 1: Default simple range datepicker with an predafined input</p>
-            <HotelDatePicker :ref="dpkr1.datePickerId" :active="dpkr1.active" :datePickerId="dpkr1.datePickerId" :placeholder="dpkr1.placeholder" :selectForward="dpkr1.selectForward" :separator="dpkr1.separator" :showTopbar="dpkr1.showTopbar" :hoveringTooltip="dpkr1.hoveringTooltip" v-on:updateDateRange="dpkr1.updateDateRange" v-on:cancelUpdateDateRange="dpkr1.cancelUpdateDateRange" />
+            <HotelDatePicker :ref="dpkr1.datePickerId" :active="dpkr1.active" :datePickerId="dpkr1.datePickerId" :placeholder="dpkr1.placeholder" :selectForward="dpkr1.selectForward" :separator="dpkr1.separator" :showTopbar="dpkr1.showTopbar" :hoveringTooltip="dpkr1.hoveringTooltip" />
           </div>
           <div class="demoDatepicker">
             <p>Demo 2: Default hotel style range datepicker with a predefined value in the input </p>
@@ -102,6 +102,12 @@
             <p>Demo 15: Use datepicker in another language (繁體中文)</p>
             <HotelDatePicker :ref="dpkr15.datePickerId" :datePickerId="dpkr15.datePickerId" :placeholder="dpkr15.placeholder" :autoClose="autoClose" :separator="separator" :i18n="dpkr15.i18n" />
           </div>
+          <div class="demoDatepicker">
+            <p>Demo 16: Trigger by other click event</p>
+            <p v-if="dpkr16.value">Your selected date range: {{dpkr16.value}}</p>
+            <HotelDatePicker :ref="dpkr16.datePickerId" :datePickerId="dpkr16.datePickerId" :placeholder="dpkr16.placeholder" :autoClose="dpkr16.autoClose" :separator="separator" v-on:updateDateRange="updateDateRange" />
+            <a class="btn" @click="toggle(dpkr16.datePickerId)"> Click me! </a>
+          </div>
         </div>
       </section>
       <section class="footer"></section>
@@ -176,17 +182,7 @@ export default {
           // Overwrite default boolean
           // Not working when value is false (boolean)
           return false;
-        },
-        updateDateRange(date) {
-          // console.log('dpkr1 on updateDateRange', date);
-          // You can $emit event to praent
-          // EX: this.$emit('updateDateRange');
-        },
-        cancelUpdateDateRange() {
-          // console.log('dpkr1 on cancelUpdateDateRange');
-          // You can $emit event to praent
-          // EX: this.$emit('cancelUpdateDateRange');
-        },
+        }
       },
       dpkr2: {
         value: '',
@@ -284,6 +280,12 @@ export default {
         placeholder: 'DatePicker example 15',
         autoClose: false,
         i18n: i18nTWData
+      },
+      dpkr16: {
+        value: '',
+        datePickerId: 'datePickerId16',
+        placeholder: 'DatePicker example 16',
+        autoClose: true
       }
     }
   },
@@ -293,25 +295,26 @@ export default {
   },
   methods: {
     toggle(datePickerId) {
-      this.$refs[this.datePickerId].toggle();
+      console.log('toggle', datePickerId)
+      this.$refs[datePickerId].toggle();
     },
     getValue(datePickerId) {
-      return this.$refs[this.datePickerId].getValue();
+      return this.$refs[datePickerId].getValue();
     },
-    setValue(val) {
+    setValue(datePickerId, val) {
       this.$refs[this.datePickerId].setValue(val);
     },
-    open(datePickerId) {
-      this.$refs[this.datePickerId].open();
-      if (this.sinceDate && this.untilDate) {
-        this.$refs[this.datePickerId].setRange(this.sinceDate, this.untilDate);
+    open(datePickerId, sinceDate, untilDate) {
+      this.$refs[datePickerId].open();
+      if (sinceDate && untilDate) {
+        this.$refs[datePickerId].setRange(sinceDate, untilDate);
       }
     },
     close(datePickerId) {
-      this.$refs[this.datePickerId].close();
+      this.$refs[datePickerId].close();
     },
     getDatePicker(datePickerId) {
-      const hdpkr = this.$refs[this.datePickerId].getDatePicker();
+      const hdpkr = this.$refs[datePickerId].getDatePicker();
       // console.log(hdpkr);
     },
     setRange(datePickerId, d1, d2) {
@@ -321,6 +324,13 @@ export default {
       const hdpkrInput = document.querySelector(`#${dpkr.datePickerId}`);
       if (hdpkrInput && hdpkrInput.style)
         hdpkrInput.style.display = 'none';
+    },
+    updateDateRange: function(newDateRange, datePickerId) {
+      Object.keys(this.$data).map(key => {
+        if (typeof (this.$data[key]) === 'object')
+          if (this.$data[key].datePickerId === datePickerId)
+            this.$data[key].value = newDateRange;
+      })
     }
   },
   mounted() {
@@ -336,6 +346,10 @@ export default {
     const demo2_d2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after tomorrow
     this.setRange(this.dpkr2.datePickerId, demo2_d1, demo2_d2);
 
+    // Demo example 16
+    const dpkr16Element = document.querySelector(`#${this.dpkr16.datePickerId}`);
+    if (dpkr16Element)
+      dpkr16Element.style.display = 'none';
   }
 
 }
@@ -397,18 +411,19 @@ body {
           width: 160px;
           padding: 16px;
           font-size: 18px;
-          color: #009EDE;
-          background-color: transparent;
-          border: 1px solid #009EDE;
-          border-radius: 6px;
           text-align: center;
           text-decoration: none;
+          vertical-align: middle;
+          color: #007BFF;
+          border: 1px solid #007BFF;
+          border-radius: 6px;
+          background-color: transparent;
           outline: none;
-          transition: .5s ease;
+          transition: .3s ease;
           &:hover {
             cursor: pointer;
             color: #FFFFFF;
-            background-color: #009EDE;
+            background-color: #007BFF;
           }
         }
         .linkTextWrapper {
@@ -420,10 +435,10 @@ body {
           font-size: 16px;
           text-decoration: none;
           color: #9A9A9A;
-          transition: .5s ease;
+          transition: .3s ease;
           &:hover {
             cursor: pointer;
-            color: #009EDE;
+            color: #007BFF;
           }
         }
       }
@@ -434,31 +449,45 @@ body {
       .demoDatepicker {
         margin: 40px 20px;
         .p {
-          line-height: 22px;
+          line-height: 20px;
+        }
+        .btn {
+          display: block;
+          width: 120px;
+          padding: 8px 12px;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+          color: #FFFFFF;
+          background-color: #007BFF;
+          border-color: #007BFF;
+          border-radius: 8px;
+          transition: .15s;
+          cursor: pointer;
         }
         .parameter {
           border-radius: 3px;
           padding: 3px;
           background-color: #E5E5E5;
-          color: #009EDE;
+          color: #007BFF;
           font-size: 14px
         }
         input:focus {
-          border-color: #009EDE
+          border-color: #007BFF
         }
-      }
-      input {
-        font-size: 13px;
-        width: 240px;
-        margin: 0;
-        line-height: normal;
-        box-sizing: border-box;
-        padding: 10px 20px;
-        border: 1px solid #DCDCDC;
-        &::placeholder {
-          color: #E5E5E5;
-        }
-      }
+      } //
+      // input {
+      //   font-size: 13px;
+      //   width: 240px;
+      //   margin: 0;
+      //   line-height: normal;
+      //   box-sizing: border-box;
+      //   padding: 10px 20px;
+      //   border: 1px solid #DCDCDC;
+      //   &::placeholder {
+      //     color: #E5E5E5;
+      //   }
+      // }
     }
 
     .footer {

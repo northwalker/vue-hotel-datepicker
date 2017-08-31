@@ -7,14 +7,13 @@ A Vue.js responsive date range picker for hotels or date range selection, that d
 
 [https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
 
-#### Running at development 
+#### Running in development environment
 
 ```git clone https://github.com/northwalker/vue-hotel-datepicker.git```
 
 ```npm install``` or ```yarn install```
 
 ```npm run dev``` or ```yarn run dev```
-
 
 ## Installation / Usage
 
@@ -26,27 +25,38 @@ Download this repo and copy file ```/dist/vue-hotel-datepicker.min.js``` to ```/
 ```
 
 #### Javascript
-Use ```npm``` or ```yarn``` add dependence to your project's ```package.json```
+Use ```npm``` or ```yarn``` install and add dependence to your project's ```package.json```
 ```javascript
-npm install https://github.com/northwalker/vue-hotel-datepicker.git
+npm install 'https://github.com/northwalker/vue-hotel-datepicker.git'
 ```
-
 or 
-
 ```javascript
-yarn add https://github.com/northwalker/vue-hotel-datepicker.git
+yarn add 'https://github.com/northwalker/vue-hotel-datepicker.git'
 ```
 
-and import or require component to your vue app 
+import or require component to your app. 
 
+Vue file:
 ```javascript
-import VueHotelDatePicker from '/<your-component-folder-path>/vue-hotel-datepicker.min.js'
+import VueHotelDatepicker from 'vue-hotel-datepicker'
 
 export default {
+  name: 'App'
   components: {
-    VueHotelDatePicker,
+    VueHotelDatepicker,
+  },
+  data(){
+    return {
+      datepickerId: 'datepicker-demo-id-01',
+      placeholder: 'placeholder demo 01'
+    }
   }
+
 }
+```
+HTML file:
+```html
+<VueHotelDatepicker :ref="datepickerId" :datepickerId="datepickerId" :placeholder="placeholder" />
 ```
 
 ## Props/Options
@@ -54,7 +64,8 @@ export default {
 ### datePickerId
 
 - Type: `String`
-- Default: `1`
+- Default: `'datepickerId-' + new Date().getTime().toString()` 
+  - simulate random id in default
 
 ### placeholder
 
@@ -246,10 +257,10 @@ Gets the number of nights selected. Returns `0` otherwise.
 ## Events
 
 ### updateDateRange
-When a new date is selected, trigger an event ```updateDateRange```, emit evnet and passing the new date to parent component.
+When a new date is selected, ```VueHotelDatepicker``` will emit an event ```updateDateRange```, passing the new date range string and datepicker id to parent component.
 
 ### cancelUpdateDateRange
-when a cancellation button click or occurred, trigger an event ```cancelUpdateDateRange```, emit event and notify parent component.
+when a cancellation button click or occurred, ```VueHotelDatepicker``` will emit an event ```cancelUpdateDateRange```, passing datepicker id to notify parent component.
 
 
 ## Credits

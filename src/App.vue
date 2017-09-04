@@ -9,8 +9,9 @@
           <h3>A vue.js date range picker for hotel and more. </h3>
         </div>
         <div class="links">
-          <div>
-            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/master.zip">Download ZIP</a>
+          <div class="linkDownloadWrapper">
+            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.zip">Download .zip</a>
+            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.tar.gz">Download .tar.gz</a>
           </div>
           <div class="linkTextWrapper">
             <a class="linkText" target="_blank" href="https://github.com/northwalker/vue-hotel-datepicker">View on Github</a>
@@ -406,9 +407,14 @@ body {
         }
       }
       .links {
+        .linkDownloadWrapper {
+          > a {
+            margin-right: 20px;
+          }
+        }
         .linkDownload {
-          display: block;
-          width: 160px;
+          display: inline-block;
+          min-width: 160px;
           padding: 16px;
           font-size: 18px;
           text-align: center;

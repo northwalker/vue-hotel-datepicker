@@ -46,9 +46,12 @@ body {
       font-size: 24px;
       color: #484c55;
 }
+#app .container .banner .links .linkDownloadWrapper > a {
+      margin-right: 20px;
+}
 #app .container .banner .links .linkDownload {
-      display: block;
-      width: 160px;
+      display: inline-block;
+      min-width: 160px;
       padding: 16px;
       font-size: 18px;
       text-align: center;
@@ -516,4 +519,4 @@ body {
 }
 }
 
-/*# sourceMappingURL=app.155d629.css.map*/
+/*# sourceMappingURL=app.1301a29.css.map*/

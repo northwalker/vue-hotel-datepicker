@@ -10785,6 +10785,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
+//
 
 
 
@@ -12919,12 +12920,19 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
     staticClass: "subTitle"
   }, [_c('h3', [_vm._v("A vue.js date range picker for hotel and more. ")])]), _vm._v(" "), _c('div', {
     staticClass: "links"
-  }, [_c('div', [_c('a', {
+  }, [_c('div', {
+    staticClass: "linkDownloadWrapper"
+  }, [_c('a', {
     staticClass: "linkDownload",
     attrs: {
-      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/master.zip"
+      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.zip"
     }
-  }, [_vm._v("Download ZIP")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Download .zip")]), _vm._v(" "), _c('a', {
+    staticClass: "linkDownload",
+    attrs: {
+      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.tar.gz"
+    }
+  }, [_vm._v("Download .tar.gz")])]), _vm._v(" "), _c('div', {
     staticClass: "linkTextWrapper"
   }, [_c('a', {
     staticClass: "linkText",
@@ -12961,4 +12969,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.4a668fa.js.map
+//# sourceMappingURL=app.9cdabce.js.map

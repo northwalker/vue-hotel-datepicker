@@ -7,6 +7,8 @@ A Vue.js responsive date range picker for hotels or date range selection, that d
 
 > [https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
 
+example: 
+![vue-hotel-picker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker.png)
 
 
 #### Running in development environment

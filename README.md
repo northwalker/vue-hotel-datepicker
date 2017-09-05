@@ -1,5 +1,5 @@
 # vue-hotel-datepicker
-A Vue.js responsive date range picker for hotels or date range selection, that displays the number of nights selected and allow several useful options like custom rules, localization support and more. This repo inspired from [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker) by @benitolopez.
+A Vue.js responsive date range picker for hotels and multi-purpose, wrapping a pure javascript [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker), that displays the number of nights selected and allow several useful options like custom rules, localization support and more. This repo inspired from [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker) by @benitolopez.
 
 ## Demo
 

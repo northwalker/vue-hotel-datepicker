@@ -1,17 +1,17 @@
 # vue-hotel-datepicker
-A Vue.js responsive date range picker for hotels and multi-purpose, wrapping a pure javascript [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker), that displays the number of nights selected and allow several useful options like custom rules, localization support and more. This repo inspired from [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker) by @benitolopez.
+A [Vue.js](https://vuejs.org/) date range picker component for hotels and multi-purpose. Vue hotel datepicker provide date range selecting, minimum and maximum night limitation, custom methods for date restriction, custom date formating and localization support, This repository wrapped up and inspired from a pure javascript [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker) by @benitolopez.
 
 ## Demo
 
-#### Github page 
+##### Github page: 
 
 > [https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
 
-example: 
-![vue-hotel-picker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker.png)
+##### Live image: 
+> ![vue-hotel-picker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker.png)
 
 
-#### Running in development environment
+##### Running in development environment:
 
 1. clone from github repository 
 
@@ -30,7 +30,7 @@ npm run dev or yarn run dev
 ## Installation / Usage
 
 
-#### Usage of vue componet
+##### Usage of vue componet
 Use ```npm``` or ```yarn``` install and add dependence
 ```bash
 npm install https://github.com/northwalker/vue-hotel-datepicker.git
@@ -69,7 +69,7 @@ export default {
 ```
 
 
-#### Via static javascript file
+##### Via static javascript file
 
 Download this repo and copy file ```/dist/vue-hotel-datepicker.min.js``` to ```/<your-component-folder-path>/```, and add below code to your html file. 
 ```html

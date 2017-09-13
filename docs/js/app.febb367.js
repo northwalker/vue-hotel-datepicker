@@ -12925,12 +12925,12 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
   }, [_c('a', {
     staticClass: "linkDownload",
     attrs: {
-      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.zip"
+      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/v1.0.0.zip"
     }
   }, [_vm._v("Download .zip")]), _vm._v(" "), _c('a', {
     staticClass: "linkDownload",
     attrs: {
-      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.tar.gz"
+      "href": "https://github.com/northwalker/vue-hotel-datepicker/archive/v1.0.0.tar.gz"
     }
   }, [_vm._v("Download .tar.gz")])]), _vm._v(" "), _c('div', {
     staticClass: "linkTextWrapper"
@@ -12969,4 +12969,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.9cdabce.js.map
+//# sourceMappingURL=app.febb367.js.map

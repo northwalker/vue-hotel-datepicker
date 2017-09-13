@@ -10,8 +10,8 @@
         </div>
         <div class="links">
           <div class="linkDownloadWrapper">
-            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.zip">Download .zip</a>
-            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/v0.1.0.tar.gz">Download .tar.gz</a>
+            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/v1.0.0.zip">Download .zip</a>
+            <a class="linkDownload" href="https://github.com/northwalker/vue-hotel-datepicker/archive/v1.0.0.tar.gz">Download .tar.gz</a>
           </div>
           <div class="linkTextWrapper">
             <a class="linkText" target="_blank" href="https://github.com/northwalker/vue-hotel-datepicker">View on Github</a>

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Datepicker from '../vendor/hotel-datepicker.js';
+import Datepicker from '../vendor/hotel-datepicker.js'
 
 const defaultDatei18n = {
   selected: 'Your stay:',
@@ -26,7 +26,7 @@ const defaultDatei18n = {
   'info-more-plural': 'Please select a date range longer than %d nights',
   'info-range': 'Please select a date range between %d and %d nights',
   'info-default': 'Please select a date range'
-};
+}
 
 export default {
   name: 'HotelDatepicker',
@@ -122,68 +122,66 @@ export default {
     'hdpkr.isOpen': {
       handler(newVal, oldVal) {
         if (!this.hdpkr.isOpen && this.hdpkr.changed) {
-          const date = document.querySelector(`#${this.datePickerId}`).value;
-          this.$emit('updateDateRange', date, this.datePickerId);
-        }
-        else if (!this.hdpkr.isOpen && !this.hdpkr.changed) {
-          this.$emit('cancelUpdateDateRange', this.datePickerId);
+          const date = document.querySelector(`#${this.datePickerId}`).value
+          this.$emit('updateDateRange', date, this.datePickerId)
+        } else if (!this.hdpkr.isOpen && !this.hdpkr.changed) {
+          this.$emit('cancelUpdateDateRange', this.datePickerId)
         }
       }
     }
   },
   methods: {
     getValue() {
-      return this.hdpkr.getValue();
+      return this.hdpkr.getValue()
     },
     setValue(val) {
-      this.hdpkr.setValue(val);
+      this.hdpkr.setValue(val)
     },
     toggle() {
-      if (this.hdpkr.isOpen)
-        this.close();
-      else
-        this.open();
+      if (this.hdpkr.isOpen) {
+        this.close()
+      } else {
+        this.open()
+      }
     },
     open: function() {
       setTimeout(() => {
-        this.hdpkr.open();
+        this.hdpkr.open()
       }, 0)
     },
     close() {
       setTimeout(() => {
-        this.hdpkr.close();
+        this.hdpkr.close()
       }, 0)
     },
     clear() {
       // Clears the datepicker value.
       setTimeout(() => {
-        this.hdpkr.clear();
+        this.hdpkr.clear()
       }, 100)
     },
     setRange(d1, d2) {
       // Sets the date range value.
-      this.hdpkr.setRange(d1, d2);
+      this.hdpkr.setRange(d1, d2)
     },
     getDatePicker() {
       // Gets the datepicker DOM element.
-      return this.hdpkr.getDatePicker();
+      return this.hdpkr.getDatePicker()
     },
     getNights() {
       // Gets the number of nights selected. Returns 0 otherwise.
-      return this.hdpkr.getNights();
+      return this.hdpkr.getNights()
     },
     updateDateRange(e) {
-      const newDate = document.querySelector(`#${this.datePickerId}`).value;
-      // console.log('HotelDatepicker updateDateRange', newDate, e);
-      this.$emit('updateDateRange', newDate, this.datePickerId);
+      const newDate = document.querySelector(`#${this.datePickerId}`).value
+      // console.log('HotelDatepicker updateDateRange', newDate, e)
+      this.$emit('updateDateRange', newDate, this.datePickerId)
     }
   },
   mounted: function() {
-
-    // const containerElement = document.querySelector(this.container);
+    // const containerElement = document.querySelector(this.container)
     // console.log('containerElement', containerElement)
-
-    const hdpkrId = document.querySelector(`#${this.datePickerId}`);
+    const hdpkrId = document.querySelector(`#${this.datePickerId}`)
     const hdpkrOptions = {
       datePickerId: this.datePickerId,
       format: this.format,
@@ -202,14 +200,14 @@ export default {
       hoveringTooltip: this.hoveringTooltip,
       showTopbar: this.showTopbar,
       autoClose: this.autoClose,
-      i18n: this.i18n,
+      i18n: this.i18n
     }
-    this.hdpkr = new Datepicker(hdpkrId, hdpkrOptions);
+    this.hdpkr = new Datepicker(hdpkrId, hdpkrOptions)
     // console.log(this.hdpkr)
     if (!this.showTopbar) {
       // showTopbar is not implement from hotel datepicker now...
-      const hdpkr_topbar = document.querySelector('.datepicker__topbar');
-      hdpkr_topbar.style.display = 'none';
+      const hdpkrTopbar = document.querySelector('.datepicker__topbar')
+      hdpkrTopbar.style.display = 'none'
     }
   }
 }

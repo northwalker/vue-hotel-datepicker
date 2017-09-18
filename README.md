@@ -62,9 +62,8 @@ export default {
       placeholder: 'placeholder demo 01'
     }
   }
-
 }
-</ script>
+</script>
 
 ```
 
@@ -285,5 +284,6 @@ when a cancellation button click or occurred, ```VueHotelDatepicker``` will emit
 This componend was originally built as a Vue wrapper component for the [Hotel Datepicker](https://github.com/benitolopez/hotel-datepicker) by @benitolopez. It diverted from the original implementation though, implementing extra features.
 
 ## License
-[MIT](http://opensource.org/licenses/MIT) 
-Copyright 2017 [Northwalker](https://northwalker.github.io)
+[MIT License](http://opensource.org/licenses/MIT) 
+ 
+Copyright &copy; 2017 [Northwalker](https://northwalker.github.io)

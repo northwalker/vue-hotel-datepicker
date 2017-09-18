@@ -10789,6 +10789,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 
+/* eslint-disable no-unused-vars */
+// For structure example
 var i18nEnData = {
   selected: 'Your stay:',
   night: 'Night',
@@ -10806,8 +10808,8 @@ var i18nEnData = {
   'info-more-plural': 'Please select a date range longer than %d nights',
   'info-range': 'Please select a date range between %d and %d nights',
   'info-default': 'Please select a date range'
-};
-var i18nTWData = {
+  /* eslint-enable no-unused-vars */
+};var i18nTWData = {
   selected: 'Your stay:',
   night: 'Night',
   nights: 'Nights',
@@ -10954,7 +10956,7 @@ var i18nTWData = {
   computed: {},
   methods: {
     toggle: function toggle(datePickerId) {
-      console.log('toggle', datePickerId);
+      // console.log('toggle', datePickerId)
       this.$refs[datePickerId].toggle();
     },
     getValue: function getValue(datePickerId) {
@@ -10974,40 +10976,48 @@ var i18nTWData = {
     },
     getDatePicker: function getDatePicker(datePickerId) {
       var hdpkr = this.$refs[datePickerId].getDatePicker();
-      // console.log(hdpkr);
+      return hdpkr; // console.log(hdpkr)
     },
     setRange: function setRange(datePickerId, d1, d2) {
       this.$refs[datePickerId].setRange(d1, d2);
     },
     hideDateInput: function hideDateInput(dpkr) {
       var hdpkrInput = document.querySelector('#' + dpkr.datePickerId);
-      if (hdpkrInput && hdpkrInput.style) hdpkrInput.style.display = 'none';
+      if (hdpkrInput && hdpkrInput.style) {
+        hdpkrInput.style.display = 'none';
+      }
     },
 
     updateDateRange: function updateDateRange(newDateRange, datePickerId) {
       var _this = this;
 
       Object.keys(this.$data).map(function (key) {
-        if (_typeof(_this.$data[key]) === 'object') if (_this.$data[key].datePickerId === datePickerId) _this.$data[key].value = newDateRange;
+        if (_typeof(_this.$data[key]) === 'object') {
+          if (_this.$data[key].datePickerId === datePickerId) {
+            _this.$data[key].value = newDateRange;
+          }
+        }
       });
     }
   },
   mounted: function mounted() {
-    // this.hideDateInput();
+    // this.hideDateInput()
 
     // Demo example 1
-    var demo1_d1 = new Date(); // tomorrow
-    var demo1_d2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after today
-    this.setRange(this.dpkr1.datePickerId, demo1_d1, demo1_d2);
+    var demo1D1 = new Date(); // tomorrow
+    var demo1D2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after today
+    this.setRange(this.dpkr1.datePickerId, demo1D1, demo1D2);
 
     // Demo example 2
-    var demo2_d1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // tomorrow
-    var demo2_d2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after tomorrow
-    this.setRange(this.dpkr2.datePickerId, demo2_d1, demo2_d2);
+    var demo2D1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // tomorrow
+    var demo2D2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after tomorrow
+    this.setRange(this.dpkr2.datePickerId, demo2D1, demo2D2);
 
     // Demo example 16
     var dpkr16Element = document.querySelector('#' + this.dpkr16.datePickerId);
-    if (dpkr16Element) dpkr16Element.style.display = 'none';
+    if (dpkr16Element) {
+      dpkr16Element.style.display = 'none';
+    }
   }
 });
 
@@ -11199,7 +11209,11 @@ var defaultDatei18n = {
       this.hdpkr.setValue(val);
     },
     toggle: function toggle() {
-      if (this.hdpkr.isOpen) this.close();else this.open();
+      if (this.hdpkr.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
     },
 
     open: function open() {
@@ -11238,15 +11252,13 @@ var defaultDatei18n = {
     },
     updateDateRange: function updateDateRange(e) {
       var newDate = document.querySelector('#' + this.datePickerId).value;
-      // console.log('HotelDatepicker updateDateRange', newDate, e);
+      // console.log('HotelDatepicker updateDateRange', newDate, e)
       this.$emit('updateDateRange', newDate, this.datePickerId);
     }
   },
   mounted: function mounted() {
-
-    // const containerElement = document.querySelector(this.container);
+    // const containerElement = document.querySelector(this.container)
     // console.log('containerElement', containerElement)
-
     var hdpkrId = document.querySelector('#' + this.datePickerId);
     var hdpkrOptions = {
       datePickerId: this.datePickerId,
@@ -11272,8 +11284,8 @@ var defaultDatei18n = {
     // console.log(this.hdpkr)
     if (!this.showTopbar) {
       // showTopbar is not implement from hotel datepicker now...
-      var hdpkr_topbar = document.querySelector('.datepicker__topbar');
-      hdpkr_topbar.style.display = 'none';
+      var hdpkrTopbar = document.querySelector('.datepicker__topbar');
+      hdpkrTopbar.style.display = 'none';
     }
   }
 });
@@ -12969,4 +12981,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.febb367.js.map
+//# sourceMappingURL=app.969683a.js.map

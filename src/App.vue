@@ -117,8 +117,10 @@
 </template>
 
 <script>
-import fecha from 'fecha';
-import HotelDatePicker from './HotelDatePicker.vue';
+import fecha from 'fecha'
+import HotelDatePicker from './HotelDatePicker.vue'
+/* eslint-disable no-unused-vars */
+// For structure example
 const i18nEnData = {
   selected: 'Your stay:',
   night: 'Night',
@@ -136,7 +138,8 @@ const i18nEnData = {
   'info-more-plural': 'Please select a date range longer than %d nights',
   'info-range': 'Please select a date range between %d and %d nights',
   'info-default': 'Please select a date range'
-};
+}
+/* eslint-enable no-unused-vars */
 const i18nTWData = {
   selected: 'Your stay:',
   night: 'Night',
@@ -154,7 +157,7 @@ const i18nTWData = {
   'info-more-plural': 'Please select a date range longer than %d nights',
   'info-range': 'Please select a date range between %d and %d nights',
   'info-default': '請選擇一個日期範圍'
-};
+}
 export default {
   name: 'DateRangePicker',
   components: {
@@ -164,13 +167,14 @@ export default {
   },
   data() {
     return {
-      autoClose: false,         // common setting
-      separator: ' ~ ',         // common setting
-      selectForward: false,     // common setting
-      hoveringTooltip() {       // common setting
+      autoClose: false, // common setting
+      separator: ' ~ ', // common setting
+      selectForward: false, // common setting
+      hoveringTooltip() {
+        // common setting
         // Overwrite default boolean
         // Not working when value is false (boolean)
-        return false;
+        return false
       },
       dpkr1: {
         value: '',
@@ -182,18 +186,18 @@ export default {
         hoveringTooltip() {
           // Overwrite default boolean
           // Not working when value is false (boolean)
-          return false;
+          return false
         }
       },
       dpkr2: {
         value: '',
         datePickerId: 'datePickerId02',
-        placeholder: 'DatePicker example 02',
+        placeholder: 'DatePicker example 02'
       },
       dpkr3: {
         value: '',
         datePickerId: 'datePickerId03',
-        placeholder: 'DatePicker example 03',
+        placeholder: 'DatePicker example 03'
       },
       dpkr4: {
         value: '',
@@ -296,61 +300,65 @@ export default {
   },
   methods: {
     toggle(datePickerId) {
-      console.log('toggle', datePickerId)
-      this.$refs[datePickerId].toggle();
+      // console.log('toggle', datePickerId)
+      this.$refs[datePickerId].toggle()
     },
     getValue(datePickerId) {
-      return this.$refs[datePickerId].getValue();
+      return this.$refs[datePickerId].getValue()
     },
     setValue(datePickerId, val) {
-      this.$refs[this.datePickerId].setValue(val);
+      this.$refs[this.datePickerId].setValue(val)
     },
     open(datePickerId, sinceDate, untilDate) {
-      this.$refs[datePickerId].open();
+      this.$refs[datePickerId].open()
       if (sinceDate && untilDate) {
-        this.$refs[datePickerId].setRange(sinceDate, untilDate);
+        this.$refs[datePickerId].setRange(sinceDate, untilDate)
       }
     },
     close(datePickerId) {
-      this.$refs[datePickerId].close();
+      this.$refs[datePickerId].close()
     },
     getDatePicker(datePickerId) {
-      const hdpkr = this.$refs[datePickerId].getDatePicker();
-      // console.log(hdpkr);
+      const hdpkr = this.$refs[datePickerId].getDatePicker()
+      return hdpkr // console.log(hdpkr)
     },
     setRange(datePickerId, d1, d2) {
-      this.$refs[datePickerId].setRange(d1, d2);
+      this.$refs[datePickerId].setRange(d1, d2)
     },
     hideDateInput(dpkr) {
-      const hdpkrInput = document.querySelector(`#${dpkr.datePickerId}`);
-      if (hdpkrInput && hdpkrInput.style)
-        hdpkrInput.style.display = 'none';
+      const hdpkrInput = document.querySelector(`#${dpkr.datePickerId}`)
+      if (hdpkrInput && hdpkrInput.style) {
+        hdpkrInput.style.display = 'none'
+      }
     },
     updateDateRange: function(newDateRange, datePickerId) {
       Object.keys(this.$data).map(key => {
-        if (typeof (this.$data[key]) === 'object')
-          if (this.$data[key].datePickerId === datePickerId)
-            this.$data[key].value = newDateRange;
+        if (typeof (this.$data[key]) === 'object') {
+          if (this.$data[key].datePickerId === datePickerId) {
+            this.$data[key].value = newDateRange
+          }
+        }
       })
     }
   },
   mounted() {
-    // this.hideDateInput();
+    // this.hideDateInput()
 
     // Demo example 1
-    const demo1_d1 = new Date(); // tomorrow
-    const demo1_d2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after today
-    this.setRange(this.dpkr1.datePickerId, demo1_d1, demo1_d2);
+    const demo1D1 = new Date() // tomorrow
+    const demo1D2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000) // 5 day after today
+    this.setRange(this.dpkr1.datePickerId, demo1D1, demo1D2)
 
     // Demo example 2
-    const demo2_d1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // tomorrow
-    const demo2_d2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000); // 5 day after tomorrow
-    this.setRange(this.dpkr2.datePickerId, demo2_d1, demo2_d2);
+    const demo2D1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000) // tomorrow
+    const demo2D2 = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000) // 5 day after tomorrow
+    this.setRange(this.dpkr2.datePickerId, demo2D1, demo2D2)
 
     // Demo example 16
-    const dpkr16Element = document.querySelector(`#${this.dpkr16.datePickerId}`);
-    if (dpkr16Element)
-      dpkr16Element.style.display = 'none';
+    const dpkr16Element = document.querySelector(`#${this.dpkr16.datePickerId}`)
+    if (dpkr16Element) {
+      dpkr16Element.style.display = 'none'
+    }
   }
 
 }
@@ -408,7 +416,7 @@ body {
       }
       .links {
         .linkDownloadWrapper {
-          > a {
+          >a {
             margin-right: 20px;
           }
         }

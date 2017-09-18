@@ -11,20 +11,20 @@ module.exports = {
   },
   globals: {},
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended', 'standard'],
   // required to lint *.vue files
   plugins: [
     'html'
   ],
   // add your custom rules here
   'rules': {
+    // 'no-var': 1
     // allow paren-less arrow functions
-    'arrow-parens': 0,
+    // 'arrow-parens': 0,
     // allow async-await
-    'generator-star-spacing': 0,
+    // 'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ?2: 0,
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'space-before-function-paren': 0,
-    'no-var': 1
   }
 }

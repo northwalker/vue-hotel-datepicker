@@ -1,8 +1,10 @@
 
+
 <!-- <a href="https://www.npmjs.com/package/nw-vhd-test"><img src="https://img.shields.io/npm/v/nw-vhd-test.svg" alt="Version"></a> -->
-<a href="https://www.npmjs.com/package/nw-vhd-test"><img src="https://img.shields.io/npm/l/nw-vhd-test.svg" alt="License"></a>
-<a href="https://npmcharts.com/compare/nw-vhd-test?minimal=true"><img src="https://img.shields.io/npm/dm/nw-vhd-test.svg" alt="Downloads"></a>
+<!-- <a href="https://www.npmjs.com/package/nw-vhd-test"><img src="https://img.shields.io/npm/l/nw-vhd-test.svg" alt="License"></a>
+<a href="https://npmcharts.com/compare/nw-vhd-test?minimal=true"><img src="https://img.shields.io/npm/dm/nw-vhd-test.svg" alt="Downloads"></a> -->
 <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Code Style"></a>
+<a href="https://circleci.com/gh/northwalker/vue-hotel-datepicker/tree/master"><img src="https://img.shields.io/circleci/project/github/northwalker/vue-hotel-datepicker/master.svg" alt="Build Status"></a>
 
 # vue-hotel-datepicker
 
@@ -25,11 +27,11 @@ A pure [Vue.js](https://vuejs.org/) date range picker component without any othe
 ##### Usage of vue componet
 Use ```npm``` or ```yarn``` install and add dependence
 ```bash
-npm install https://github.com/northwalker/vue-hotel-datepicker.git
+$ npm install https://github.com/northwalker/vue-hotel-datepicker.git
 ```
 or
 ```bash
-yarn add https://github.com/northwalker/vue-hotel-datepicker.git
+$ yarn add https://github.com/northwalker/vue-hotel-datepicker.git
 ```
 
 import component
@@ -142,36 +144,42 @@ An array of strings by props format value, default `YYYY-MM-DD` (as same as defa
 ### weekList
  - Type: `Array`
  - Default: `['Sun.', 'Mon.', 'Tue.', 'Wen.', 'Thu.', 'Fri.', 'Sat.']`
+ - Example with i18n `zh-tw`: `['週一', '週二', '週三', '週四', '週五', '週六', '週日']`
 
 A array of strings for week text.
 
 ### monthList
  - Type: `Array`
  - Default: `['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct', 'Nov.', 'Dec.']`
+ - Example with i18n `zh-tw`: `['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']`
 
 A array of strings for month text.
 
 ### fromText
  - Type: `String`
  - Default: `From`
+ - Example with i18n `zh-tw`: `從`
 
 Text of label "From".
 
 ### toText
  - Type: `String`
  - Default: `To`
+ - Example with i18n `zh-tw`: `到`
 
 Text of label "To".
 
 ### resetText
  - Type: `String`
  - Default: `Reset`
+ - Example with i18n `zh-tw`: `重設`
 
 Text of button "Reset"
 
 ### confirmText
  - Type: `String`
  - Default: `Confirm`
+ - Example with i18n `zh-tw`: `確認`
 
 Text of button "Confirm"
 

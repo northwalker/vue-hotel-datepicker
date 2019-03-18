@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "Github pages building job."
+  test:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "Github pages testing job."
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test

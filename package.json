@@ -1,19 +1,25 @@
 {
   "name": "vue-hotel-datepicker",
-  "version": "1.0.1",
+  "version": "2.0.0-beta.1",
   "description": "A Vue.js date range picker",
+  "main": "lib/vue-hotel-datepicker.umd.js",
+  "module": "lib/vue-hotel-datepicker.esm.js",
+  "unpkg": "lib/vue-hotel-datepicker.min.js",
+  "browser": {
+    "./sfc": "src/components/VueHotelDatepicker.vue"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --dest lib  --name vue-hotel-datepicker ./src/components/VueHotelDatepicker.vue",
+    "build:wc": "vue-cli-service build --target wc --dest wc --name vue-hotel-datepicker ./src/components/VueHotelDatepicker.vue",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit --no-cache",
+    "prebuild": "vue-cli-service build --target lib --dest lib  --name vue-hotel-datepicker ./src/components/VueHotelDatepicker.vue"
+  },
   "author": "Northwalker <northwalker28@gmail.com>",
   "license": "MIT",
-  "main": "dist/vue-hotel-datepicker.min.js",
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot --config ./build/webpack.dev.conf.js",
-    "prebuild:dist": "rm -rf dist",
-    "build:dist": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
-    "prebuild": "rm -rf docs",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot --config ./build/webpack.config.js",
-    "lint": "eslint ./src/*.vue ./src/*.js "
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/northwalker/vue-hotel-datepicker.git"
@@ -25,43 +31,31 @@
     "date picker",
     "date range picker",
     "hotel datepicker",
-    "vue datepicker"
+    "vue datepicker",
+    "vue hotel datepicker"
   ],
   "bugs": {
     "url": "https://github.com/northwalker/vue-hotel-datepicker/issues"
   },
   "homepage": "https://github.com/northwalker/vue-hotel-datepicker#readme",
   "dependencies": {
-    "fecha": "^2.3.1",
-    "vue": "^2.5.2"
+    "vue": "^2.5.22"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.1",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "cross-env": "^5.1.0",
-    "css-loader": "^0.28.5",
-    "eslint": "^4.5.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.2.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.5",
-    "html-webpack-plugin": "^2.30.1",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
-    "url-loader": "^0.6.2",
-    "vue-loader": "^13.0.4",
-    "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.4.2",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.7.1"
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-unit-jest": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
   }
 }

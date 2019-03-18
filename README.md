@@ -7,36 +7,34 @@
 
 # vue-hotel-datepicker
 
-A pure [Vue.js](https://vuejs.org/) date range picker component without any other dependencies for hotels date range selection and multi-purpose. Vue hotel datepicker provide date range selecting, minimum and maximum night limitation, custom methods for date restriction, custom date formating and localization support.
+A pure [Vue.js](https://vuejs.org/) date range picker component without any other dependencies, for hotels date range selection and multi-purpose. Vue hotel datepicker provide date range selecting, minimum and maximum night limitation, custom methods for date restriction, custom date formating and localization support.
 
 ## Demo
 
 ### Live demo(Github page)
-  > [https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
+[https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
 
 ### Desktop capture preview
-  > ![Desktop vue-hotel-datepicker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker_desktop.png)
+<img style="border-radius: 6px; box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.27);" src="https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker_desktop.png" />
 
 ### Mobile capture preview
-  > ![Mobile vue-hotel-datepicker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker_mobile.png)
+<img style="border-radius: 6px; box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.27);" src="https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker_mobile.png" />
 
 ### Previous version
-  > v1.0.0: [Document](https://github.com/northwalker/vue-hotel-datepicker/tree/v1.0.0)
+v1.0.0: [Document](https://github.com/northwalker/vue-hotel-datepicker/tree/v1.0.0)
 
-## Instal
+## Installation
 
-Use ```npm``` or ```yarn``` install and add dependence
+Use ```npm``` or ```yarn``` for installation
 ```bash
 $ npm install @northwalker/vue-hotel-datepicker
-```
-or
-```bash
+# OR
 $ yarn add @northwalker/vue-hotel-datepicker
 ```
 
 ## Usage
 
-Import component
+Method 1: Import component in `.vue` file
 
 ```vue
 <template>
@@ -55,11 +53,12 @@ export default {
   //
 }
 </script>
-
 ```
 
-##### Via static javascript file
+Method 2:  Via static javascript in `html` file
+
 Download this repo and copy file ```/lib/vue-hotel-datepicker.umd.min.js``` to ```/<your-lib-folder-path>/```, and add below code to your html file.
+
 ```html
 <script type="text/javascript" src="/<your-lib-folder-path>/vue-hotel-datepicker.umd.min.js"></script>
 ```
@@ -68,21 +67,21 @@ Download this repo and copy file ```/lib/vue-hotel-datepicker.umd.min.js``` to `
 
 ### placeholder
  - Type: `String`
- - Default: `Select a date range`
+ - Default: `'Select a date range'`
 
 The input placeholder text
 
 ### format
 
  - Type: `String`
- - Default: `YYYY-MM-DD`
+ - Default: `'YYYY-MM-DD'`
 
 The date format string.
 
 ### separator
 
  - Type: `String`
- - Default: ` ~ `
+ - Default: `' ~ '`
 
 The separator string used between date strings.
 
@@ -103,7 +102,7 @@ The end date of given date range.
 ### minDate
 
  - Type: `Date` or `String`
- - Default: today
+ - Default: today midnight.
 
 The start view date. All the dates before this date will be disabled.
 
@@ -141,7 +140,7 @@ If `false`, you can select a range of dates in both directions.
  - Type: `Array`
  - Default: `[]`
 
-An array of strings by props format value, default `YYYY-MM-DD` (as same as default `format`). All the dates passed to the list can not be selected as a start and end date.
+An array of strings by props format value, default `'YYYY-MM-DD'` (as same as default `format`). All the dates passed to the list can not be selected as a start and end date.
 
 ### weekList
  - Type: `Array`
@@ -159,36 +158,36 @@ A array of strings for month text.
 
 ### fromText
  - Type: `String`
- - Default: `From`
- - Example with i18n `zh-tw`: `從`
+ - Default: `'From'`
+ - Example with i18n `zh-tw`: `'從'`
 
 Text of label "From".
 
 ### toText
  - Type: `String`
- - Default: `To`
- - Example with i18n `zh-tw`: `到`
+ - Default: `'To'`
+ - Example with i18n `zh-tw`: `'到'`
 
 Text of label "To".
 
 ### resetText
  - Type: `String`
- - Default: `Reset`
- - Example with i18n `zh-tw`: `重設`
+ - Default: `'Reset'`
+ - Example with i18n `zh-tw`: `'重設'`
 
 Text of button "Reset"
 
 ### confirmText
  - Type: `String`
- - Default: `Confirm`
- - Example with i18n `zh-tw`: `確認`
+ - Default: `'Confirm'`
+ - Example with i18n `zh-tw`: `'確認'`
 
 Text of button "Confirm"
 
 ### mobile
  - Type: `String`
  - Default: `''`
- - value: `'mobile'` or `'desktop'`
+ - value: `'mobile'` or `'desktop'` or `''`
 
 Display in mobile or desktop date picker style version, default will depend on common brower's width.
 

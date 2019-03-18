@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Demo from './views/Demo.vue'
+import Demo from './views/Demo'
 
 export default {
   name: 'app',

@@ -1,6 +1,6 @@
 {
   "name": "@northwalker/vue-hotel-datepicker",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "A Vue.js date range picker",
   "main": "lib/vue-hotel-datepicker.umd.js",
   "module": "lib/vue-hotel-datepicker.esm.js",
@@ -15,7 +15,7 @@
     "build:wc": "vue-cli-service build --target wc --dest wc --name vue-hotel-datepicker ./src/components/VueHotelDatepicker.vue",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit --no-cache",
+    "test:unit": "vue-cli-service test:unit --coverage --no-cache",
     "prebuild": "vue-cli-service build --target lib --dest lib  --name vue-hotel-datepicker ./src/components/VueHotelDatepicker.vue",
     "postbuild": "rm -rf ./docs && cp -rf ./dist ./docs "
   },

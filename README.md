@@ -14,16 +14,17 @@ A pure [Vue.js](https://vuejs.org/) date range picker component without any othe
 ### Live demo(Github page)
   > [https://northwalker.github.io/vue-hotel-datepicker/](https://northwalker.github.io/vue-hotel-datepicker/)
 
-### Figure preview
-  > ![vue-hotel-datepicker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker.png)
+### Desktop capture preview
+  > ![Desktop vue-hotel-datepicker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker_desktop.png)
 
+### Mobile capture preview
+  > ![Mobile vue-hotel-datepicker demo picture](https://raw.githubusercontent.com/northwalker/vue-hotel-datepicker/master/demo_vue_hotel_picker_mobile.png)
 
 ### Previous version
   > v1.0.0: [Document](https://github.com/northwalker/vue-hotel-datepicker/tree/v1.0.0)
 
-## Installation / Usage
+## Instal
 
-##### Usage of vue componet
 Use ```npm``` or ```yarn``` install and add dependence
 ```bash
 $ npm install @northwalker/vue-hotel-datepicker
@@ -33,7 +34,9 @@ or
 $ yarn add @northwalker/vue-hotel-datepicker
 ```
 
-import component
+## Usage
+
+Import component
 
 ```vue
 <template>
@@ -130,7 +133,8 @@ Maximum nights required to select a range of dates.
  - Type: `Boolean`
  - Default: `false`
 
-If `true`, the selection of the second date must be after the first date. If `false`, you can select a range of dates in both directions.
+If `true`, The selection of the second date must be after the first date.
+If `false`, you can select a range of dates in both directions.
 
 ### disabledDates
 
@@ -181,10 +185,28 @@ Text of button "Reset"
 
 Text of button "Confirm"
 
+### mobile
+ - Type: `String`
+ - Default: `''`
+ - value: `'mobile'` or `'desktop'`
+
+Display in mobile or desktop date picker style version, default will depend on common brower's width.
+
 ## Events
 
 ### update
 When a new date is selected, ```VueHotelDatepicker``` will emit an event ```update```, passing the new date range object to parent component.
+
+Rate range Object:
+```javacript
+{
+  start: 'YYYY-MM-DD',
+  end: 'YYYY-MM-DD'
+}
+```
+
+### confirm
+When a confirm button click, passing the new date range object to parent component (as same as event `'update'`).
 
 ### close
 when a cancellation button click or occurred, ```VueHotelDatepicker``` will emit an event ```close``` to notify parent component.

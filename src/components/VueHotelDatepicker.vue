@@ -1,5 +1,5 @@
 <template>
-  <div class="vhd-container">
+  <div :class="mobile.toLowerCase()" class="vhd-container">
     <input v-model="value"
            :placeholder="placeholder"
            type="text" class="vhd-input" aria-label="vue-hotel-datepicker-input"
@@ -163,6 +163,10 @@ export default {
     confirmText: {
       type: String,
       default: 'Confirm'
+    },
+    mobile: {
+      type: String,
+      default: '' // mobile or desktop
     }
   },
   data () {
@@ -223,7 +227,7 @@ export default {
           start: this.displayDateText(this.selectStartDate),
           end: this.displayDateText(this.selectEndDate)
         }
-        this.$emit('update', dateResult)
+        this.$emit('comform', dateResult)
         this.active = false
       }
     },
@@ -236,7 +240,7 @@ export default {
         const displayStr = (this.format || 'YYYY/MM/DD').replace('YYYY', yyyy).replace('MM', mm).replace('DD', dd)
         return displayStr
       } else {
-        return null
+        return undefined
       }
     },
     generateCalendar (calculateYear = new Date().getFullYear(), calculateMonth = new Date().getMonth(), config = {}) {
@@ -390,6 +394,11 @@ export default {
           }
           this.clickCount++
         }
+        const dateResult = {
+          start: this.displayDateText(this.selectStartDate),
+          end: this.displayDateText(this.selectEndDate)
+        }
+        this.$emit('update', dateResult)
 
         if (this.selectStartDate && this.selectEndDate) {
           this.updateValue()
@@ -400,6 +409,67 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@mixin mobile-vhd() {
+  .vhd {
+    &-picker {
+      width: 300px;
+      padding: 8px;
+    }
+    &-calendar {
+      &-header {
+        height: 60px;
+        > .info {
+          display: block;
+          width: 100%;
+          height: 60px;
+          padding-top: 36px;
+        }
+      }
+      &-left {
+        width: 100%;
+        margin-right: 0;
+      }
+      &-right {
+        display: none;
+      }
+      .calendar {
+        &-month {
+          .previous-arrow.offset-2 {
+            display: none;
+          }
+          .previous-arrow.offset-1 {
+            display: inline-block;
+          }
+          .next-arrow.offset-1 {
+            display: inline-block;
+          }
+        }
+        &-week {}
+        &-date {
+          .week {
+            .day {
+              width: calc(100% / 7);
+              &.start-date {
+                color: #ffffff;
+                border-left: none;
+                // background-color: #B2D7FF;
+                background-color: #0088FF;
+                transition: all .2s ease;
+              }
+              &.end-date {
+                color: #ffffff;
+                border-right: none;
+                // background-color: #B2D7FF;
+                background-color: #0088FF;
+                transition: all .2s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 * {
   box-sizing: border-box;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -413,6 +483,9 @@ svg {
   }
 }
 .vhd {
+  &-container.mobile {
+    @include mobile-vhd();
+  }
   &-container {
     display: inline-block;
     position: relative;
@@ -656,64 +729,11 @@ svg {
     }
   }
 }
+
 @media only screen and (max-width: 767.98px) {
   .vhd {
-    &-picker {
-      width: 300px;
-      padding: 8px;
-    }
-    &-calendar {
-      &-header {
-        height: 60px;
-        > .info {
-          display: block;
-          width: 100%;
-          height: 60px;
-          padding-top: 36px;
-        }
-      }
-      &-left {
-        width: 100%;
-        margin-right: 0;
-      }
-      &-right {
-        display: none;
-      }
-      .calendar {
-        &-month {
-          .previous-arrow.offset-2 {
-            display: none;
-          }
-          .previous-arrow.offset-1 {
-            display: inline-block;
-          }
-          .next-arrow.offset-1 {
-            display: inline-block;
-          }
-        }
-        &-week {}
-        &-date {
-          .week {
-            .day {
-              width: calc(100% / 7);
-              &.start-date {
-                color: #ffffff;
-                border-left: none;
-                // background-color: #B2D7FF;
-                background-color: #0088FF;
-                transition: all .2s ease;
-              }
-              &.end-date {
-                color: #ffffff;
-                border-right: none;
-                // background-color: #B2D7FF;
-                background-color: #0088FF;
-                transition: all .2s ease;
-              }
-            }
-          }
-        }
-      }
+    &-container:not(.desktop) {
+      @include mobile-vhd();
     }
   }
 }

@@ -2,40 +2,44 @@
   <div id="demo" class="demo">
     <h2>Demo</h2>
     <div class="demo-example">
-      <p>Demo: Default simple range datepicker without any config</p>
+      <p>1. Default simple range datepicker without any config</p>
       <VueHotelDatepicker />
     </div>
     <div class="demo-example">
-      <p>Demo: Default range datepicker with selected start date <code>{{ displayDateText(testStartDate) }}</code> and end date <code>{{ displayDateText(testEndDate) }}</code></p>
+      <p>2. Default range datepicker with selected start date <code>{{ displayDateText(testStartDate) }}</code> and end date <code>{{ displayDateText(testEndDate) }}</code></p>
       <VueHotelDatepicker :startDate="testStartDate" :endDate="testEndDate" />
     </div>
     <div class="demo-example">
-      <p>Demo: Default range datepicker with limited date range min date <code>{{ displayDateText(testMinDate) }}</code> and max date <code>{{ displayDateText(testMaxDate) }} </code> </p>
+      <p>3. a mobile version of range datepicker with selected start date <code>{{ displayDateText(testStartDate) }}</code> and end date <code>{{ displayDateText(testEndDate) }}</code></p>
+      <VueHotelDatepicker :startDate="testStartDate" :endDate="testEndDate" :mobile="'mobile'" />
+    </div>
+    <div class="demo-example">
+      <p>4. Default range datepicker with limited date range min date <code>{{ displayDateText(testMinDate) }}</code> and max date <code>{{ displayDateText(testMaxDate) }} </code> </p>
       <VueHotelDatepicker :minDate="testMinDate" :maxDate="testMaxDate" />
     </div>
     <div class="demo-example">
-      <p>Demo: Customized format <code>MM/DD/YYYY</code> and seperator <code>-</code></p>
+      <p>5. Customized format <code>MM/DD/YYYY</code> and seperator <code>-</code></p>
       <VueHotelDatepicker :format="'MM/DD/YYYY'" :seperator="' - '"  :startDate="testStartDate" :endDate="testEndDate" />
     </div>
     <div class="demo-example">
-      <p>Demo: Mininum number of nights: <code>7</code></p>
+      <p>6. Mininum number of nights: <code>7</code></p>
       <VueHotelDatepicker :minNight="7" />
     </div>
     <div class="demo-example">
-      <p>Demo: Maximum number of nights: <code>5</code></p>
+      <p>7. Maximum number of nights: <code>5</code></p>
       <VueHotelDatepicker :maxNight="5" />
     </div>
     <div class="demo-example">
-      <p>Demo: Range between <code>4</code> and <code>8</code> nights</p>
+      <p>8. Range between <code>4</code> and <code>8</code> nights</p>
       <VueHotelDatepicker :minNight="4" :maxNight="8" />
     </div>
     <div class="demo-example">
-      <p>Demo: Allow to select end date before start date</p>
+      <p>9. Allow to select end date before start date</p>
       <VueHotelDatepicker :selectForward="false"/>
     </div>
     <div class="demo-example">
       <p>
-        Demo: Disable some dates
+        10. Disable some dates
         <span v-for="(date, index) in disabledDates" :key="index">
           <code>{{ date }}</code>
           <span v-if="index !== disabledDates.length - 1">, </span>
@@ -44,7 +48,7 @@
       <VueHotelDatepicker :disabledDates="disabledDates"/>
     </div>
     <div class="demo-example">
-      <p>Demo: Use datepicker in another language (ex: 繁體中文)</p>
+      <p>11. Use datepicker in another language (ex: 繁體中文)</p>
       <VueHotelDatepicker
         :fromText="'從'" :toText="'到'"
         :resetText="'重設'" :confirmText="'確認'"

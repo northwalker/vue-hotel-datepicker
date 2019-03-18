@@ -1,6 +1,6 @@
 {
-  "name": "vue-hotel-datepicker",
-  "version": "2.0.0-beta.3",
+  "name": "@northwalker/vue-hotel-datepicker",
+  "version": "2.0.0-beta.4",
   "description": "A Vue.js date range picker",
   "main": "lib/vue-hotel-datepicker.umd.js",
   "module": "lib/vue-hotel-datepicker.esm.js",
@@ -43,11 +43,11 @@
     "vue": "^2.5.22"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-plugin-e2e-cypress": "^3.4.0",
-    "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-plugin-unit-jest": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-plugin-unit-jest": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "7.0.0-bridge.0",

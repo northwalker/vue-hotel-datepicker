@@ -1,6 +1,6 @@
 {
   "name": "vue-hotel-datepicker",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "A Vue.js date range picker",
   "main": "lib/vue-hotel-datepicker.umd.js",
   "module": "lib/vue-hotel-datepicker.esm.js",
@@ -58,5 +58,10 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
   }
 }

@@ -27,11 +27,11 @@ A pure [Vue.js](https://vuejs.org/) date range picker component without any othe
 ##### Usage of vue componet
 Use ```npm``` or ```yarn``` install and add dependence
 ```bash
-$ npm install https://github.com/northwalker/vue-hotel-datepicker.git
+$ npm install @northwalker/vue-hotel-datepicker
 ```
 or
 ```bash
-$ yarn add https://github.com/northwalker/vue-hotel-datepicker.git
+$ yarn add @northwalker/vue-hotel-datepicker
 ```
 
 import component
@@ -42,8 +42,7 @@ import component
 </template>
 
 <script>
-import VueHotelDatepicker from 'vue-hotel-datepicker'
-
+import VueHotelDatepicker from '@northwalker/vue-hotel-datepicker'
 export default {
   name: 'App'
   components: {

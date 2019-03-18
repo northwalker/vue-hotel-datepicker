@@ -195,7 +195,7 @@ Display in mobile or desktop date picker style version, default will depend on c
 ### update
 When a new date is selected, ```VueHotelDatepicker``` will emit an event ```update```, passing the new date range object to parent component.
 
-Rate range Object:
+Date range Object:
 ```javacript
 {
   start: 'YYYY-MM-DD',

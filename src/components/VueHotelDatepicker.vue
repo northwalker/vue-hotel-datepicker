@@ -339,7 +339,7 @@ export default {
         } else if (this.disabledDates.indexOf(this.displayDateText(datetime)) > -1) {
           classList.push('disabled')
           classList.push('forbidden')
-        } else if (this.selectStartDate && this.selectStartDate.getTime() > datetime.getTime() && this.selectForward) {
+        } else if (this.selectStartDate && this.selectStartDate.getTime() > datetime.getTime() && !this.selectForward) {
           classList.push('disabled')
         } else if (this.selectStartDate && this.selectStartDate.getTime() === datetime.getTime()) {
           classList.push('start-date')

@@ -1,7 +1,7 @@
 {
   "name": "@northwalker/vue-hotel-datepicker",
-  "version": "2.0.0",
-  "description": "A Vue.js date range picker",
+  "version": "2.0.1",
+  "description": "A vue.js date range picker for hotel and more.",
   "main": "lib/vue-hotel-datepicker.umd.js",
   "module": "lib/vue-hotel-datepicker.esm.js",
   "unpkg": "lib/vue-hotel-datepicker.min.js",
@@ -39,9 +39,7 @@
     "url": "https://github.com/northwalker/vue-hotel-datepicker/issues"
   },
   "homepage": "https://github.com/northwalker/vue-hotel-datepicker#readme",
-  "dependencies": {
-    "vue": "^2.5.22"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-e2e-cypress": "^3.5.0",
@@ -57,7 +55,11 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue": "^2.6.6",
     "vue-template-compiler": "^2.5.21"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.6"
   },
   "directories": {
     "doc": "docs",

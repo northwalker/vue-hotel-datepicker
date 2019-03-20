@@ -34,7 +34,7 @@
       <VueHotelDatepicker :minNight="4" :maxNight="8" />
     </div>
     <div class="demo-example">
-      <p>9. Allow to select end date before start date</p>
+      <p>9. Disallow to select end date before start date</p>
       <VueHotelDatepicker :selectForward="false"/>
     </div>
     <div class="demo-example">
@@ -73,7 +73,6 @@ export default {
       testEndDate: undefined,
       testMinDate: undefined,
       testMaxDate: undefined,
-      selectForwardDate: undefined,
       disabledDates: []
     }
   },

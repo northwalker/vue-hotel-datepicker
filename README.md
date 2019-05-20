@@ -104,6 +104,7 @@ The end date of given date range.
  - Default: today midnight.
 
 The start view date. All the dates before this date will be disabled.
+If preset `startDate` less than `minDate`, `minDate` will reset to preset `startDate`.
 
 ### maxDate
 

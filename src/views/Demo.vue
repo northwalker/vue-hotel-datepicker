@@ -79,6 +79,7 @@ export default {
   created () {
     const now = new Date()
     const nextMonOffset = 7 + Math.abs((1 - now.getDay()))
+    this.testStartDate0 = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate() + nextMonOffset, 0, 0, 0)
     this.testStartDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + nextMonOffset, 0, 0, 0)
     this.testEndDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + nextMonOffset + 5, 0, 0, 0)
     this.testMinDate = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0)
@@ -98,6 +99,10 @@ export default {
     ]
   },
   methods: {
+    convertDateString (dateString) {
+      const dateAry = dateString.split('-')
+      return new Date(dateAry[0], Number.parseInt(dateAry[1] - 1), dateAry[2])
+    },
     displayDateText (datetime) {
       if (datetime) {
         datetime = typeof (datetime) === 'string' ? new Date(datetime) : datetime

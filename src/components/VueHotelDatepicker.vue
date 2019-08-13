@@ -370,9 +370,9 @@ export default {
           classList.push('in-date-range')
         }
         // check min night and max night
-        if (this.selectStartDate && this.selectStartDate.getTime() < datetime.getTime() &&
-            ((Number.isInteger(this.minNight) && this.minNight > 0) || (Number.isInteger(this.maxNight) && this.maxNight > 0))) {
-          const night = (datetime.getTime() - this.selectStartDate.getTime()) / (1000 * 60 * 60 * 24)
+        if (this.selectStartDate && ((Number.isInteger(this.minNight) && this.minNight > 0) ||
+            (Number.isInteger(this.maxNight) && this.maxNight > 0))) {
+          const night = Math.abs((datetime.getTime() - this.selectStartDate.getTime())) / (1000 * 60 * 60 * 24)
           if (night < this.minNight) {
             classList.push('disabled')
           } else if (night > this.maxNight) {
@@ -417,6 +417,13 @@ export default {
         if (this.selectStartDate && this.selectEndDate && this.maxNight) {
           const limitDate = this.selectStartDate.getTime() + this.maxNight * 1000 * 60 * 60 * 24
           if (this.selectEndDate.getTime() > limitDate) {
+            this.selectEndDate = new Date(limitDate)
+          }
+        }
+        // check minNight
+        if (this.selectStartDate && this.selectEndDate && this.minNight) {
+          const limitDate = this.selectStartDate.getTime() + this.minNight * 1000 * 60 * 60 * 24
+          if (this.selectEndDate.getTime() < limitDate) {
             this.selectEndDate = new Date(limitDate)
           }
         }

@@ -100,7 +100,7 @@ export default {
       type: String,
       default: 'Select a date range'
     },
-    seperator: {
+    separator: {
       type: String,
       default: '~'
     },
@@ -322,7 +322,7 @@ export default {
       this.endMonthAry = this.generateCalendar(this.endMonthDate.getFullYear(), this.endMonthDate.getMonth())
     },
     updateValue () {
-      this.value = `${this.displayDateText(this.selectStartDate)} ${this.seperator} ${this.displayDateText(this.selectEndDate)}`
+      this.value = `${this.displayDateText(this.selectStartDate)} ${this.separator} ${this.displayDateText(this.selectEndDate)}`
     },
     disabledPreviousArrow (datetime) {
       const now = new Date()
@@ -412,6 +412,13 @@ export default {
             this.selectEndDate = datetime
           }
           this.clickCount++
+        }
+        // check maxNight
+        if (this.selectStartDate && this.selectEndDate && this.maxNight) {
+          const limitDate = this.selectStartDate.getTime() + this.maxNight * 1000 * 60 * 60 * 24
+          if (this.selectEndDate.getTime() > limitDate) {
+            this.selectEndDate = new Date(limitDate)
+          }
         }
         const dateResult = {
           start: this.displayDateText(this.selectStartDate),

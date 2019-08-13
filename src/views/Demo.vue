@@ -18,8 +18,8 @@
       <VueHotelDatepicker :minDate="testMinDate" :maxDate="testMaxDate" />
     </div>
     <div class="demo-example">
-      <p>5. Customized format <code>MM/DD/YYYY</code> and seperator <code>-</code></p>
-      <VueHotelDatepicker :format="'MM/DD/YYYY'" :seperator="' - '"  :startDate="testStartDate" :endDate="testEndDate" />
+      <p>5. Customized format <code>MM/DD/YYYY</code> and separator <code>-</code></p>
+      <VueHotelDatepicker :format="'MM/DD/YYYY'" :separator="' - '"  :startDate="testStartDate" :endDate="testEndDate" />
     </div>
     <div class="demo-example">
       <p>6. Mininum number of nights: <code>7</code></p>

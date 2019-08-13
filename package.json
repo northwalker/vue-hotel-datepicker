@@ -1,6 +1,6 @@
 {
   "name": "@northwalker/vue-hotel-datepicker",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A vue.js date range picker for hotel and more.",
   "main": "lib/vue-hotel-datepicker.umd.js",
   "module": "lib/vue-hotel-datepicker.esm.js",

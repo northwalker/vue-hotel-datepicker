@@ -1,6 +1,6 @@
 {
   "name": "@northwalker/vue-hotel-datepicker",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A vue.js date range picker for hotel and more.",
   "main": "lib/vue-hotel-datepicker.umd.js",
   "module": "lib/vue-hotel-datepicker.esm.js",
@@ -41,25 +41,23 @@
   "homepage": "https://github.com/northwalker/vue-hotel-datepicker#readme",
   "dependencies": {},
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-e2e-cypress": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-plugin-pwa": "^3.7.0",
-    "@vue/cli-plugin-unit-jest": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "@vue/cli-plugin-babel": "^3.10.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.10.0",
+    "@vue/cli-plugin-eslint": "^3.10.0",
+    "@vue/cli-plugin-pwa": "^3.10.0",
+    "@vue/cli-plugin-unit-jest": "^3.10.0",
+    "@vue/cli-service": "^3.10.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
-    "core-js": "2.6.5",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "tar": ">=2.2.2",
     "vue": "^2.6.10",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "peerDependencies": {
     "vue": "^2.6.10"

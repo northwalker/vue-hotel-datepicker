@@ -113,14 +113,14 @@ If preset `startDate` less than `minDate`, `minDate` will reset to preset `start
 
 The end view date. All the dates after this date will be disabled.
 
-### minNights
+### minNight
 
  - Type: `Number`
  - Default: `0`
 
 Minimum nights required to select a range of dates.
 
-### maxNights
+### maxNight
 
  - Type: `Number`
  - Default: `0`

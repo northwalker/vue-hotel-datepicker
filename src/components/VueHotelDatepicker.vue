@@ -198,7 +198,7 @@ export default {
     if (this.startDate) {
       const startDateValue = typeof (this.startDate) === 'string' ? this.startDate : this.startDate.getTime()
       this.selectStartDate = new Date(startDateValue)
-      if (this.selectMinDate.getTime() > this.selectStartDate.getTime()) {
+      if (this.selectMinDate && this.selectMinDate.getTime() > this.selectStartDate.getTime()) {
         this.selectMinDate = new Date(startDateValue)
       }
       if (!this.endDate) {
@@ -324,22 +324,20 @@ export default {
     updateValue () {
       this.value = `${this.displayDateText(this.selectStartDate)} ${this.separator} ${this.displayDateText(this.selectEndDate)}`
     },
-    disabledPreviousArrow (datetime) {
+    disabledPreviousArrow (monthDatetime) {
       const now = new Date()
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0)
-
-      if (datetime && this.selectForward) {
-        if (this.selectMinDate && this.selectStartDate) {
-          const minimalTime = this.selectMinDate.getTime() < this.selectStartDate.getTime() ? this.selectMinDate : this.selectStartDate
-          if (datetime.getFullYear() < minimalTime.getFullYear() || datetime.getMonth() <= minimalTime.getMonth()) {
+      if (monthDatetime && this.selectForward) {
+        if (this.selectMinDate) {
+          if (monthDatetime.getFullYear() < this.selectMinDate.getFullYear()) {
             return 'disabled'
           }
-        } else if (this.selectMinDate) {
-          if (datetime.getFullYear() < this.selectMinDate.getFullYear() || datetime.getMonth() <= this.selectMinDate.getMonth()) {
+          if (monthDatetime.getFullYear() === this.selectMinDate.getFullYear() &&
+            monthDatetime.getMonth() <= this.selectMinDate.getMonth()) {
             return 'disabled'
           }
         } else {
-          if (datetime.getFullYear() === today.getFullYear() && datetime.getMonth() === today.getMonth()) {
+          if (monthDatetime.getFullYear() === today.getFullYear() && monthDatetime.getMonth() === today.getMonth()) {
             return 'disabled'
           }
         }

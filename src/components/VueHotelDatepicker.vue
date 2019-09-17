@@ -182,8 +182,7 @@ export default {
       selectMaxDate: undefined,
       startMonthAry: [],
       endMonthAry: [],
-      clickCount: 0,
-      clicked: false
+      clickCount: 0
     }
   },
   computed: {},
@@ -226,7 +225,6 @@ export default {
     },
     close () {
       this.active = false
-      this.clicked = false
       this.$emit('close')
     },
     reset () {

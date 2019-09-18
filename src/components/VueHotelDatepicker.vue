@@ -215,7 +215,7 @@ export default {
   },
   mounted () {},
   methods: {
-    toggle (ev) {
+    toggle (e) {
       if (ev.type === 'focus') {
         this.active = true
         return true

@@ -3,7 +3,8 @@
     <input v-model="value"
            :placeholder="placeholder"
            type="text" class="vhd-input" aria-label="vue-hotel-datepicker-input"
-           @click="active = !active">
+           @mousedown.prevent="toggle"
+           @focus.prevent="toggle">
     <div v-if="active" class="vhd-picker">
       <div class="vhd-calendar">
         <div class="vhd-calendar-header">
@@ -214,6 +215,14 @@ export default {
   },
   mounted () {},
   methods: {
+    toggle (e) {
+      if (e.type === 'focus') {
+        this.active = true
+        return true
+      }
+
+      this.active = !this.active
+    },
     close () {
       this.active = false
       this.$emit('close')

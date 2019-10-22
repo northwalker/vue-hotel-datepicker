@@ -79,7 +79,8 @@
         </div>
         <div class="vhd-calendar-footer">
           <div v-if="selectStartDate || selectEndDate" class="reset" @click="reset">{{ resetText }}</div>
-          <div v-if="selectStartDate && selectEndDate" class="confirm" @click="confirm">{{ confirmText }}</div>
+          <div v-if="selectStartDate && selectEndDate && isAcceptableDates" class="confirm" @click="confirm">{{
+            confirmText }}</div>
         </div>
       </div>
     </div>
@@ -175,6 +176,10 @@ export default {
       default: false
     },
     inlineMode: {
+      type: Boolean,
+      default: false
+    },
+    isAcceptableDates: {
       type: Boolean,
       default: false
     }

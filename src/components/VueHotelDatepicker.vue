@@ -79,7 +79,8 @@
         </div>
         <div class="vhd-calendar-footer">
           <div v-if="selectStartDate || selectEndDate" class="reset" @click="reset">{{ resetText }}</div>
-          <div v-if="selectStartDate && selectEndDate" class="confirm" @click="confirm">{{ confirmText }}</div>
+          <div v-if="selectStartDate && selectEndDate && isAcceptableDates" class="confirm" @click="confirm">{{
+            confirmText }}</div>
         </div>
       </div>
     </div>
@@ -175,6 +176,10 @@ export default {
       default: false
     },
     inlineMode: {
+      type: Boolean,
+      default: false
+    },
+    isAcceptableDates: {
       type: Boolean,
       default: false
     }
@@ -440,8 +445,18 @@ export default {
         // check minNight
         if (this.selectStartDate && this.selectEndDate && this.minNight) {
           const limitDate = this.selectStartDate.getTime() + this.minNight * 1000 * 60 * 60 * 24
-          if (this.selectEndDate.getTime() < limitDate) {
-            this.selectEndDate = new Date(limitDate)
+
+          if (this.maxDate) {
+            const maxDateValue = typeof (this.maxDate) === 'string' ? new Date(this.maxDate).getTime() : this.maxDate.getTime()
+
+            if (this.selectEndDate.getTime() < limitDate && limitDate < maxDateValue) {
+              this.selectEndDate = new Date(limitDate)
+            }
+          }
+          if (!this.maxDate) {
+            if (this.selectEndDate.getTime() < limitDate) {
+              this.selectEndDate = new Date(limitDate)
+            }
           }
         }
         const dateResult = {

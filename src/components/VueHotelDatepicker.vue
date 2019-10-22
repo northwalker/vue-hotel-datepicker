@@ -2,13 +2,14 @@
   <div :class="mobile.toLowerCase()" class="vhd-container">
     <input v-model="value"
            :placeholder="placeholder"
-           type="text" class="vhd-input" aria-label="vue-hotel-datepicker-input"
+           :class="['vhd-input', {'vhd-input--inline': inlineMode}]"
+           type="text" aria-label="vue-hotel-datepicker-input"
            @mousedown.prevent="toggle"
            @focus.prevent="toggle">
-    <div v-if="active" class="vhd-picker">
+    <div v-if="active" :class="['vhd-picker', {'vhd-picker--inline': inlineMode}]">
       <div class="vhd-calendar">
         <div class="vhd-calendar-header">
-          <a class="close" @click="close">
+          <a v-if="!inlineMode" class="close" @click="close">
             <IconClose />
           </a>
           <span class="info">
@@ -78,7 +79,8 @@
         </div>
         <div class="vhd-calendar-footer">
           <div v-if="selectStartDate || selectEndDate" class="reset" @click="reset">{{ resetText }}</div>
-          <div v-if="selectStartDate && selectEndDate" class="confirm" @click="confirm">{{ confirmText }}</div>
+          <div v-if="selectStartDate && selectEndDate && isAcceptableDates" class="confirm" @click="confirm">{{
+            confirmText }}</div>
         </div>
       </div>
     </div>
@@ -168,12 +170,23 @@ export default {
     mobile: {
       type: String,
       default: '' // mobile or desktop
+    },
+    active: {
+      type: Boolean,
+      default: false
+    },
+    inlineMode: {
+      type: Boolean,
+      default: false
+    },
+    isAcceptableDates: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
       value: '',
-      active: false,
       startMonthDate: undefined,
       endMonthDate: undefined,
       selectStartDate: undefined,
@@ -245,7 +258,9 @@ export default {
           end: this.displayDateText(this.selectEndDate)
         }
         this.$emit('confirm', dateResult)
-        this.active = false
+        if (!this.inlineMode) {
+          this.active = false
+        }
       }
     },
     displayDateText (datetime) {
@@ -541,6 +556,9 @@ svg {
     &::placeholder {
       color: #cccccc;
     }
+    &--inline {
+      display: none;
+    }
   }
   &-picker {
     z-index: 100;
@@ -554,6 +572,10 @@ svg {
     border-radius: 6px;
     box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.27);
     overflow: hidden;
+    &--inline {
+      position: relative;
+      box-shadow: none;
+    }
   }
   &-calendar {
     &-header {

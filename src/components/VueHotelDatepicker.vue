@@ -237,7 +237,7 @@ export default {
       this.active = !this.active
     },
     close () {
-      this.active = false
+      // this.active = false
       this.$emit('close')
     },
     reset () {

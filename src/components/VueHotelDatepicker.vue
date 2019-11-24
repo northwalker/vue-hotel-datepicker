@@ -259,7 +259,7 @@ export default {
         }
         this.$emit('confirm', dateResult)
         if (!this.inlineMode) {
-          this.active = false
+          // this.active = false
         }
       }
     },

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/vue-hotel-datepicker/precache-manifest.6e88207729253afd2e7e1d9ea71db2d8.js"
+  "/vue-hotel-datepicker/precache-manifest.4b1f7b0020158b581eed36baae52c402.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "@northwalker/vue-hotel-datepicker"});

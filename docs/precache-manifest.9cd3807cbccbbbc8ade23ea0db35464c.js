@@ -4,11 +4,11 @@ self.__precacheManifest = [
     "url": "/vue-hotel-datepicker/js/chunk-vendors.61bc5260.js"
   },
   {
-    "revision": "2656f2b04b9aa01677c1",
-    "url": "/vue-hotel-datepicker/js/app.66cffd51.js"
+    "revision": "0905b9e4174783ff3232",
+    "url": "/vue-hotel-datepicker/js/app.18bf9022.js"
   },
   {
-    "revision": "a96d3e37563c5b4d603209aa67795f35",
+    "revision": "1f7ba127b3bbbc5850d61588a21273c9",
     "url": "/vue-hotel-datepicker/index.html"
   },
   {

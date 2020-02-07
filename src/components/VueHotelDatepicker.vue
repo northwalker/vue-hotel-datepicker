@@ -188,33 +188,36 @@ export default {
   computed: {},
   watch: {},
   created () {
-    if (this.minDate) {
-      const minDateValue = typeof (this.minDate) === 'string' ? this.minDate : this.minDate.getTime()
-      this.selectMinDate = new Date(minDateValue)
-    }
-    if (this.maxDate) {
-      const maxDateValue = typeof (this.maxDate) === 'string' ? this.maxDate : this.maxDate.getTime()
-      this.selectMaxDate = new Date(maxDateValue)
-    }
-    if (this.startDate) {
-      const startDateValue = typeof (this.startDate) === 'string' ? this.startDate : this.startDate.getTime()
-      this.selectStartDate = new Date(startDateValue)
-      if (this.selectMinDate && this.selectMinDate.getTime() > this.selectStartDate.getTime()) {
-        this.selectMinDate = new Date(startDateValue)
-      }
-      if (!this.endDate) {
-        this.selectEndDate = new Date(this.selectStartDate.getTime() + (24 * 60 * 60 * 1000))
-      } else {
-        const endDateValue = typeof (this.endDate) === 'string' ? this.endDate : this.endDate.getTime()
-        this.selectEndDate = new Date(endDateValue)
-      }
-
-      this.updateValue()
-    }
-    this.updateCalendar() // after setting
+    this.render()
   },
   mounted () {},
   methods: {
+    render() {
+      if (this.minDate) {
+        const minDateValue = typeof (this.minDate) === 'string' ? this.minDate : this.minDate.getTime()
+        this.selectMinDate = new Date(minDateValue)
+      }
+      if (this.maxDate) {
+        const maxDateValue = typeof (this.maxDate) === 'string' ? this.maxDate : this.maxDate.getTime()
+        this.selectMaxDate = new Date(maxDateValue)
+      }
+      if (this.startDate) {
+        const startDateValue = typeof (this.startDate) === 'string' ? this.startDate : this.startDate.getTime()
+        this.selectStartDate = new Date(startDateValue)
+        if (this.selectMinDate && this.selectMinDate.getTime() > this.selectStartDate.getTime()) {
+          this.selectMinDate = new Date(startDateValue)
+        }
+        if (!this.endDate) {
+          this.selectEndDate = new Date(this.selectStartDate.getTime() + (24 * 60 * 60 * 1000))
+        } else {
+          const endDateValue = typeof (this.endDate) === 'string' ? this.endDate : this.endDate.getTime()
+          this.selectEndDate = new Date(endDateValue)
+        }
+
+        this.updateValue()
+      }
+      this.updateCalendar() // after setting
+    },
     toggle (e) {
       if (e.type === 'focus') {
         this.active = true

@@ -193,14 +193,6 @@ export default {
   mounted () {},
   methods: {
     render() {
-
-      console.log('RENDER');
-      console.log('minDate', this.minDate);
-      console.log('maxDate', this.maxDate);
-      console.log('startDate', this.startDate);
-      console.log('startDate', this.startDate);
-      console.log('endDate', this.endDate);
-
       if (this.minDate) {
         const minDateValue = typeof (this.minDate) === 'string' ? this.minDate : this.minDate.getTime()
         this.selectMinDate = new Date(minDateValue)
@@ -237,6 +229,10 @@ export default {
     close () {
       this.active = false
       this.$emit('close')
+    },
+    open () {
+      this.active = true
+      this.$emit('open')
     },
     reset () {
       this.selectStartDate = undefined
